@@ -1,0 +1,62 @@
+.root {
+  display: flex;
+  width: 875px;
+  height: 177px;
+  max-width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 8px;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  margin-right: 0px;
+  margin-left: 49px;
+}
+.img___4Gjj {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  left: auto;
+  top: auto;
+  margin-right: 0;
+  width: 158px;
+  margin-left: 0;
+  flex-shrink: 0;
+}
+.img___4Gjj > picture > img {
+  object-fit: cover;
+}
+.upload2:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  height: 157px;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  height: 148px;
+  margin-bottom: 0px;
+  border: 1px solid var(--token-5flkhAz6pTxg);
+}
+.img {
+  object-fit: cover;
+  max-width: 100%;
+  width: 158px;
+  height: 97px;
+  margin-bottom: 0px;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.text {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-top: 0px;
+  min-width: 0;
+}
