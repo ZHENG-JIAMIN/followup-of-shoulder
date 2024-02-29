@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -109,7 +109,8 @@
           "componentImportPath": "@plasmicpkgs/radix-ui"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -509,7 +510,8 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "bQFzjFXbkpSsuDuBQNZ8MF",
@@ -627,6 +629,46 @@
           "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicTooltip.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "aJNGyiE-SJ0S",
+          "name": "Upload",
+          "type": "managed",
+          "projectId": "bQFzjFXbkpSsuDuBQNZ8MF",
+          "renderModuleFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicUpload.tsx",
+          "importSpec": {
+            "modulePath": "Upload.tsx"
+          },
+          "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicUpload.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "RE0cdu_4bEY_",
+          "name": "NewPage",
+          "type": "managed",
+          "projectId": "bQFzjFXbkpSsuDuBQNZ8MF",
+          "renderModuleFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicNewPage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/new-page.tsx"
+          },
+          "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicNewPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page"
+        },
+        {
+          "id": "wTSBbjdFii9t",
+          "name": "Dialog",
+          "type": "managed",
+          "projectId": "bQFzjFXbkpSsuDuBQNZ8MF",
+          "renderModuleFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicDialog.tsx",
+          "importSpec": {
+            "modulePath": "Dialog.tsx"
+          },
+          "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicDialog.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -676,6 +718,16 @@
           "id": "tEkIOt40oqQm",
           "name": "点击上传图片.png",
           "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/点击上传图片png.png"
+        },
+        {
+          "id": "bSkMYO1Wyc8U",
+          "name": "1.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_1Jpg.jpg"
+        },
+        {
+          "id": "p2vt7gW5oR-c",
+          "name": "图片1点击上传图片.png",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png"
         }
       ],
       "indirect": false,

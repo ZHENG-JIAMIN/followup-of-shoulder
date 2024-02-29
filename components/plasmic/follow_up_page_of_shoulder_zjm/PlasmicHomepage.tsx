@@ -59,11 +59,23 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
+import {
+  executePlasmicDataOp,
+  usePlasmicDataOp,
+  usePlasmicInvalidate
+} from "@plasmicapp/react-web/lib/data-sources";
+
 import Select from "../../Select"; // plasmic-import: kSMvAbxe7o9l/component
 import UploadFiles from "../../UploadFiles"; // plasmic-import: uoD6g_MxRxrM/component
-import { AntdSegmented } from "@plasmicpkgs/antd5/skinny/registerSegmented";
-import { AntdSegmentedOption } from "@plasmicpkgs/antd5/skinny/registerSegmented";
+import Upload from "../../Upload"; // plasmic-import: aJNGyiE-SJ0S/component
+import { UploadWrapper } from "@plasmicpkgs/antd5/skinny/registerUpload";
+import { AntdRadioGroup } from "@plasmicpkgs/antd5/skinny/registerRadio";
+import { AntdRadio } from "@plasmicpkgs/antd5/skinny/registerRadio";
+import { AntdTooltip } from "@plasmicpkgs/antd5/skinny/registerTooltip";
 import Button from "../../Button"; // plasmic-import: a1WfQs9Vt8cw/component
+
+import { useScreenVariants as useScreenVariantspn97G4HNqafa } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Pn97G4hNqafa/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -81,28 +93,32 @@ export type PlasmicHomepage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
 export const PlasmicHomepage__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicHomepage__ArgsType = {
-  children?: React.ReactNode;
-  children2?: React.ReactNode;
-};
+export type PlasmicHomepage__ArgsType = {};
 type ArgPropType = keyof PlasmicHomepage__ArgsType;
-export const PlasmicHomepage__ArgProps = new Array<ArgPropType>(
-  "children",
-  "children2"
-);
+export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
-  selectOfPain?: Flex__<typeof Select>;
-  qianquRom?: Flex__<"div">;
-  select?: Flex__<typeof Select>;
-  segmented?: Flex__<typeof AntdSegmented>;
-  segmented4?: Flex__<typeof AntdSegmented>;
-  segmented5?: Flex__<typeof AntdSegmented>;
-  segmented6?: Flex__<typeof AntdSegmented>;
-  segmented7?: Flex__<typeof AntdSegmented>;
-  segmented8?: Flex__<typeof AntdSegmented>;
-  segmented9?: Flex__<typeof AntdSegmented>;
+  askPain?: Flex__<typeof Select>;
+  shoulderFlexionArom?: Flex__<typeof UploadWrapper>;
+  shoulderFlexionProm?: Flex__<typeof UploadWrapper>;
+  shoulderAbductionArom?: Flex__<typeof UploadWrapper>;
+  shoulderAbductionProm?: Flex__<typeof UploadWrapper>;
+  shoulderLateralRotationArom?: Flex__<typeof UploadWrapper>;
+  shoulderLateralRotationProm?: Flex__<typeof UploadWrapper>;
+  shoulderMedialRotationArom?: Flex__<typeof UploadWrapper>;
+  shoulderMedialRotationProm?: Flex__<typeof UploadWrapper>;
+  shoulderExtensionArom?: Flex__<typeof UploadWrapper>;
+  shoulderExtensionProm?: Flex__<typeof UploadWrapper>;
+  askMuscleStrength?: Flex__<typeof Select>;
+  askAdLofGettingDressed?: Flex__<typeof AntdRadioGroup>;
+  askAdLofCombing?: Flex__<typeof AntdRadioGroup>;
+  askAdLofTurnDownTheCollar?: Flex__<typeof AntdRadioGroup>;
+  askAdLofWearingAnApron?: Flex__<typeof AntdRadioGroup>;
+  askAdLofUsingToiletPaper?: Flex__<typeof AntdRadioGroup>;
+  askAdLofRubbingTheOppositeArmpit?: Flex__<typeof AntdRadioGroup>;
+  askAdLofFasteningTheBelt?: Flex__<typeof AntdRadioGroup>;
+  tooltip?: Flex__<typeof AntdTooltip>;
   button?: Flex__<typeof Button>;
   svg?: Flex__<"svg">;
 };
@@ -143,55 +159,115 @@ function PlasmicHomepage__RenderFunc(props: {
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "select.value",
+        path: "askMuscleStrength.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "selectOfPain.value",
+        path: "askPain.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "segmented.value",
+        path: "askAdLofCombing.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "segmented4.value",
+        path: "askAdLofTurnDownTheCollar.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "segmented5.value",
+        path: "askAdLofWearingAnApron.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "segmented6.value",
+        path: "askAdLofUsingToiletPaper.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "segmented7.value",
+        path: "askAdLofRubbingTheOppositeArmpit.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "segmented8.value",
+        path: "askAdLofFasteningTheBelt.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "segmented9.value",
+        path: "shoulderFlexionArom.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "shoulderFlexionProm.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "shoulderAbductionArom.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "shoulderAbductionProm.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "shoulderLateralRotationArom.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "shoulderLateralRotationProm.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "shoulderMedialRotationArom.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "shoulderMedialRotationProm.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "shoulderExtensionArom.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "shoulderExtensionProm.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "askAdLofGettingDressed.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
@@ -204,6 +280,12 @@ function PlasmicHomepage__RenderFunc(props: {
     $ctx,
     $queries: {},
     $refs
+  });
+  const dataSourcesCtx = usePlasmicDataSourceContext();
+  const plasmicInvalidate = usePlasmicInvalidate();
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantspn97G4HNqafa()
   });
 
   return (
@@ -278,14 +360,14 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
             <Select
-              data-plasmic-name={"selectOfPain"}
-              data-plasmic-override={overrides.selectOfPain}
-              className={classNames("__wab_instance", sty.selectOfPain)}
+              data-plasmic-name={"askPain"}
+              data-plasmic-override={overrides.askPain}
+              className={classNames("__wab_instance", sty.askPain)}
               name={
                 "\u6700\u8fd1\u4e00\u5468\u75bc\u75db\u5bf9\u6d3b\u52a8\u7684\u5f71\u54cd"
               }
               onChange={(...eventArgs) => {
-                generateStateOnChangeProp($state, ["selectOfPain", "value"])(
+                generateStateOnChangeProp($state, ["askPain", "value"])(
                   eventArgs[0]
                 );
               }}
@@ -327,7 +409,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   {"\u8bf7\u9009\u62e9\u60a8\u7684\u75bc\u75db\u60c5\u51b5"}
                 </div>
               }
-              value={generateStateValueProp($state, ["selectOfPain", "value"])}
+              value={generateStateValueProp($state, ["askPain", "value"])}
             />
 
             <div className={classNames(projectcss.all, sty.freeBox__eedQx)}>
@@ -350,12 +432,10 @@ function PlasmicHomepage__RenderFunc(props: {
               />
             </div>
             <div
-              data-plasmic-name={"qianquRom"}
-              data-plasmic-override={overrides.qianquRom}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.qianquRom
+                sty.text___8ToWb
               )}
             >
               <React.Fragment>
@@ -397,9 +477,69 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
             <UploadFiles
-              className={classNames("__wab_instance", sty.uploadFiles__s5Gmj)}
-            />
+              className={classNames("__wab_instance", sty.uploadFiles__xbUza)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__uofEv)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"158px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
+                  fullWidth: 383,
+                  fullHeight: 314,
+                  aspectRatio: undefined
+                }}
+              />
 
+              <Upload
+                className={classNames("__wab_instance", sty.upload__cGb1W)}
+                upload2={
+                  <UploadWrapper
+                    data-plasmic-name={"shoulderFlexionArom"}
+                    data-plasmic-override={overrides.shoulderFlexionArom}
+                    accept={""}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.shoulderFlexionArom
+                    )}
+                    files={generateStateValueProp($state, [
+                      "shoulderFlexionArom",
+                      "files"
+                    ])}
+                    listType={"picture-card"}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderFlexionArom",
+                      "files"
+                    ])}
+                    showUploadList={true}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__zoppB)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"80px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png",
+                        fullWidth: 444,
+                        fullHeight: 290,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </UploadWrapper>
+                }
+              />
+            </UploadFiles>
             <div
               className={classNames(
                 projectcss.all,
@@ -418,8 +558,68 @@ function PlasmicHomepage__RenderFunc(props: {
             </div>
             <UploadFiles
               className={classNames("__wab_instance", sty.uploadFiles__upVOh)}
-            />
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__xcls)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"158px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
+                  fullWidth: 383,
+                  fullHeight: 314,
+                  aspectRatio: undefined
+                }}
+              />
 
+              <Upload
+                className={classNames("__wab_instance", sty.upload__aE2X7)}
+                upload2={
+                  <UploadWrapper
+                    data-plasmic-name={"shoulderFlexionProm"}
+                    data-plasmic-override={overrides.shoulderFlexionProm}
+                    accept={""}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.shoulderFlexionProm
+                    )}
+                    files={generateStateValueProp($state, [
+                      "shoulderFlexionProm",
+                      "files"
+                    ])}
+                    listType={"picture-card"}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderFlexionProm",
+                      "files"
+                    ])}
+                    showUploadList={true}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___9PKnW)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"80px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png",
+                        fullWidth: 444,
+                        fullHeight: 290,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </UploadWrapper>
+                }
+              />
+            </UploadFiles>
             <div
               className={classNames(
                 projectcss.all,
@@ -466,9 +666,69 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
             <UploadFiles
-              className={classNames("__wab_instance", sty.uploadFiles___5QEt4)}
-            />
+              className={classNames("__wab_instance", sty.uploadFiles__cb7G7)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__sk4Lv)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"158px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
+                  fullWidth: 383,
+                  fullHeight: 314,
+                  aspectRatio: undefined
+                }}
+              />
 
+              <Upload
+                className={classNames("__wab_instance", sty.upload__qjVj3)}
+                upload2={
+                  <UploadWrapper
+                    data-plasmic-name={"shoulderAbductionArom"}
+                    data-plasmic-override={overrides.shoulderAbductionArom}
+                    accept={""}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.shoulderAbductionArom
+                    )}
+                    files={generateStateValueProp($state, [
+                      "shoulderAbductionArom",
+                      "files"
+                    ])}
+                    listType={"picture-card"}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderAbductionArom",
+                      "files"
+                    ])}
+                    showUploadList={true}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__vNoGx)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"80px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png",
+                        fullWidth: 444,
+                        fullHeight: 290,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </UploadWrapper>
+                }
+              />
+            </UploadFiles>
             <div
               className={classNames(
                 projectcss.all,
@@ -486,9 +746,69 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
             <UploadFiles
-              className={classNames("__wab_instance", sty.uploadFiles__q4B0J)}
-            />
+              className={classNames("__wab_instance", sty.uploadFiles___10W71)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__sMCnl)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"158px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
+                  fullWidth: 383,
+                  fullHeight: 314,
+                  aspectRatio: undefined
+                }}
+              />
 
+              <Upload
+                className={classNames("__wab_instance", sty.upload__glGHq)}
+                upload2={
+                  <UploadWrapper
+                    data-plasmic-name={"shoulderAbductionProm"}
+                    data-plasmic-override={overrides.shoulderAbductionProm}
+                    accept={""}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.shoulderAbductionProm
+                    )}
+                    files={generateStateValueProp($state, [
+                      "shoulderAbductionProm",
+                      "files"
+                    ])}
+                    listType={"picture-card"}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderAbductionProm",
+                      "files"
+                    ])}
+                    showUploadList={true}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__uVpFr)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"80px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png",
+                        fullWidth: 444,
+                        fullHeight: 290,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </UploadWrapper>
+                }
+              />
+            </UploadFiles>
             <div
               className={classNames(
                 projectcss.all,
@@ -535,9 +855,71 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
             <UploadFiles
-              className={classNames("__wab_instance", sty.uploadFiles__qJPdw)}
-            />
+              className={classNames("__wab_instance", sty.uploadFiles__wqklH)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__xTwG5)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"158px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
+                  fullWidth: 383,
+                  fullHeight: 314,
+                  aspectRatio: undefined
+                }}
+              />
 
+              <Upload
+                className={classNames("__wab_instance", sty.upload__qpvcP)}
+                upload2={
+                  <UploadWrapper
+                    data-plasmic-name={"shoulderLateralRotationArom"}
+                    data-plasmic-override={
+                      overrides.shoulderLateralRotationArom
+                    }
+                    accept={""}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.shoulderLateralRotationArom
+                    )}
+                    files={generateStateValueProp($state, [
+                      "shoulderLateralRotationArom",
+                      "files"
+                    ])}
+                    listType={"picture-card"}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderLateralRotationArom",
+                      "files"
+                    ])}
+                    showUploadList={true}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__qTtTv)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"80px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png",
+                        fullWidth: 444,
+                        fullHeight: 290,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </UploadWrapper>
+                }
+              />
+            </UploadFiles>
             <div
               className={classNames(
                 projectcss.all,
@@ -555,9 +937,71 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
             <UploadFiles
-              className={classNames("__wab_instance", sty.uploadFiles__ye3K)}
-            />
+              className={classNames("__wab_instance", sty.uploadFiles__rNc)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__qDtuq)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"158px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
+                  fullWidth: 383,
+                  fullHeight: 314,
+                  aspectRatio: undefined
+                }}
+              />
 
+              <Upload
+                className={classNames("__wab_instance", sty.upload__oOpg)}
+                upload2={
+                  <UploadWrapper
+                    data-plasmic-name={"shoulderLateralRotationProm"}
+                    data-plasmic-override={
+                      overrides.shoulderLateralRotationProm
+                    }
+                    accept={""}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.shoulderLateralRotationProm
+                    )}
+                    files={generateStateValueProp($state, [
+                      "shoulderLateralRotationProm",
+                      "files"
+                    ])}
+                    listType={"picture-card"}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderLateralRotationProm",
+                      "files"
+                    ])}
+                    showUploadList={true}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__rqv3V)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"80px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png",
+                        fullWidth: 444,
+                        fullHeight: 290,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </UploadWrapper>
+                }
+              />
+            </UploadFiles>
             <div
               className={classNames(
                 projectcss.all,
@@ -604,9 +1048,69 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
             <UploadFiles
-              className={classNames("__wab_instance", sty.uploadFiles__zNYx)}
-            />
+              className={classNames("__wab_instance", sty.uploadFiles__mayEz)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__haHM)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"158px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
+                  fullWidth: 383,
+                  fullHeight: 314,
+                  aspectRatio: undefined
+                }}
+              />
 
+              <Upload
+                className={classNames("__wab_instance", sty.upload___1MQv1)}
+                upload2={
+                  <UploadWrapper
+                    data-plasmic-name={"shoulderMedialRotationArom"}
+                    data-plasmic-override={overrides.shoulderMedialRotationArom}
+                    accept={""}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.shoulderMedialRotationArom
+                    )}
+                    files={generateStateValueProp($state, [
+                      "shoulderMedialRotationArom",
+                      "files"
+                    ])}
+                    listType={"picture-card"}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderMedialRotationArom",
+                      "files"
+                    ])}
+                    showUploadList={true}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___0Ce9P)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"80px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png",
+                        fullWidth: 444,
+                        fullHeight: 290,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </UploadWrapper>
+                }
+              />
+            </UploadFiles>
             <div
               className={classNames(
                 projectcss.all,
@@ -624,9 +1128,69 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
             <UploadFiles
-              className={classNames("__wab_instance", sty.uploadFiles__xlCgJ)}
-            />
+              className={classNames("__wab_instance", sty.uploadFiles__rrXuE)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__o4YOj)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"158px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
+                  fullWidth: 383,
+                  fullHeight: 314,
+                  aspectRatio: undefined
+                }}
+              />
 
+              <Upload
+                className={classNames("__wab_instance", sty.upload__dFs2K)}
+                upload2={
+                  <UploadWrapper
+                    data-plasmic-name={"shoulderMedialRotationProm"}
+                    data-plasmic-override={overrides.shoulderMedialRotationProm}
+                    accept={""}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.shoulderMedialRotationProm
+                    )}
+                    files={generateStateValueProp($state, [
+                      "shoulderMedialRotationProm",
+                      "files"
+                    ])}
+                    listType={"picture-card"}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderMedialRotationProm",
+                      "files"
+                    ])}
+                    showUploadList={true}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___2RjD)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"80px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png",
+                        fullWidth: 444,
+                        fullHeight: 290,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </UploadWrapper>
+                }
+              />
+            </UploadFiles>
             <div
               className={classNames(
                 projectcss.all,
@@ -673,31 +1237,68 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
             <UploadFiles
-              className={classNames("__wab_instance", sty.uploadFiles__yjb9Q)}
+              className={classNames("__wab_instance", sty.uploadFiles__rhDUr)}
             >
-              {renderPlasmicSlot({
-                defaultContents: (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__hhTh8)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"158px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                      fullWidth: 383,
-                      fullHeight: 314,
-                      aspectRatio: undefined
-                    }}
-                  />
-                ),
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__iBmlc)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"158px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
+                  fullWidth: 383,
+                  fullHeight: 314,
+                  aspectRatio: undefined
+                }}
+              />
 
-                value: args.children
-              })}
+              <Upload
+                className={classNames("__wab_instance", sty.upload__nqXnK)}
+                upload2={
+                  <UploadWrapper
+                    data-plasmic-name={"shoulderExtensionArom"}
+                    data-plasmic-override={overrides.shoulderExtensionArom}
+                    accept={""}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.shoulderExtensionArom
+                    )}
+                    files={generateStateValueProp($state, [
+                      "shoulderExtensionArom",
+                      "files"
+                    ])}
+                    listType={"picture-card"}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderExtensionArom",
+                      "files"
+                    ])}
+                    showUploadList={true}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___2E2Xa)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"80px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png",
+                        fullWidth: 444,
+                        fullHeight: 290,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </UploadWrapper>
+                }
+              />
             </UploadFiles>
             <div
               className={classNames(
@@ -716,31 +1317,68 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
             <UploadFiles
-              className={classNames("__wab_instance", sty.uploadFiles__jxNT)}
+              className={classNames("__wab_instance", sty.uploadFiles__oi1CA)}
             >
-              {renderPlasmicSlot({
-                defaultContents: (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__tZhCg)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"158px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                      fullWidth: 383,
-                      fullHeight: 314,
-                      aspectRatio: undefined
-                    }}
-                  />
-                ),
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__zs9Au)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"158px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
+                  fullWidth: 383,
+                  fullHeight: 314,
+                  aspectRatio: undefined
+                }}
+              />
 
-                value: args.children2
-              })}
+              <Upload
+                className={classNames("__wab_instance", sty.upload__isFjy)}
+                upload2={
+                  <UploadWrapper
+                    data-plasmic-name={"shoulderExtensionProm"}
+                    data-plasmic-override={overrides.shoulderExtensionProm}
+                    accept={""}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.shoulderExtensionProm
+                    )}
+                    files={generateStateValueProp($state, [
+                      "shoulderExtensionProm",
+                      "files"
+                    ])}
+                    listType={"picture-card"}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderExtensionProm",
+                      "files"
+                    ])}
+                    showUploadList={true}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__mWpRa)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"80px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png",
+                        fullWidth: 444,
+                        fullHeight: 290,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </UploadWrapper>
+                }
+              />
             </UploadFiles>
             <div
               className={classNames(
@@ -754,16 +1392,17 @@ function PlasmicHomepage__RenderFunc(props: {
               }
             </div>
             <Select
-              data-plasmic-name={"select"}
-              data-plasmic-override={overrides.select}
-              className={classNames("__wab_instance", sty.select)}
+              data-plasmic-name={"askMuscleStrength"}
+              data-plasmic-override={overrides.askMuscleStrength}
+              className={classNames("__wab_instance", sty.askMuscleStrength)}
               name={
                 "\u6700\u8fd1\u4e00\u5468\u75bc\u75db\u5bf9\u6d3b\u52a8\u7684\u5f71\u54cd"
               }
               onChange={(...eventArgs) => {
-                generateStateOnChangeProp($state, ["select", "value"])(
-                  eventArgs[0]
-                );
+                generateStateOnChangeProp($state, [
+                  "askMuscleStrength",
+                  "value"
+                ])(eventArgs[0]);
               }}
               options={(() => {
                 const __composite = [
@@ -806,7 +1445,10 @@ function PlasmicHomepage__RenderFunc(props: {
                   }
                 </div>
               }
-              value={generateStateValueProp($state, ["select", "value"])}
+              value={generateStateValueProp($state, [
+                "askMuscleStrength",
+                "value"
+              ])}
             />
 
             <div className={classNames(projectcss.all, sty.columns__zUtBo)}>
@@ -937,22 +1579,22 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.columns__vMbq3)}>
-              <div className={classNames(projectcss.all, sty.column__rjMEi)}>
+            <div className={classNames(projectcss.all, sty.columns__bYgtf)}>
+              <div className={classNames(projectcss.all, sty.column__h9W9N)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__nsHd
+                    sty.text__r9SMf
                   )}
                 >
                   {"1\u7ea7"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.column__rdonp)}>
+              <div className={classNames(projectcss.all, sty.column___4Dch)}>
                 <PlasmicImg__
                   alt={""}
-                  className={classNames(sty.img__sz5EE)}
+                  className={classNames(sty.img__g4Wm0)}
                   displayHeight={"auto"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
@@ -1020,111 +1662,85 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.text__cz1Bu
                 )}
               >
-                {"\u7a7f\u4e0a\u8863"}
+                {" \u7a7f\u4e0a\u8863"}
               </div>
-              <AntdSegmented
-                data-plasmic-name={"segmented"}
-                data-plasmic-override={overrides.segmented}
-                className={classNames("__wab_instance", sty.segmented)}
+              <AntdRadioGroup
+                data-plasmic-name={"askAdLofGettingDressed"}
+                data-plasmic-override={overrides.askAdLofGettingDressed}
+                className={classNames(
+                  "__wab_instance",
+                  sty.askAdLofGettingDressed
+                )}
                 onChange={generateStateOnChangeProp($state, [
-                  "segmented",
+                  "askAdLofGettingDressed",
                   "value"
                 ])}
+                optionType={"button"}
                 options={(() => {
                   const __composite = [
-                    { label: null, value: "Option 1" },
-                    { label: null, value: "Option 2" },
-                    { label: null, value: "Option 3" }
+                    { value: "option1", label: null },
+                    { value: "option2", label: null },
+                    { value: null, label: null }
                   ];
                   __composite["0"]["label"] = "\u5bb9\u6613\u5b8c\u6210";
                   __composite["1"]["label"] = "\u52c9\u5f3a\u5b8c\u6210";
+                  __composite["2"]["value"] = "option 3";
                   __composite["2"]["label"] = "\u65e0\u6cd5\u5b8c\u6210";
                   return __composite;
                 })()}
-                optionsSlot={
-                  <React.Fragment>
-                    <AntdSegmentedOption
-                      className={classNames(
-                        "__wab_instance",
-                        sty.segmentedOption__yTkQt
-                      )}
-                      value={"Option 1"}
-                    >
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__uiaHt
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__dkbwq)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"none"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          src={"https://static1.plasmic.app/home-outlined.svg"}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___9Vg0
-                          )}
-                        >
-                          {"Option 1"}
-                        </div>
-                      </Stack__>
-                    </AntdSegmentedOption>
-                    <AntdSegmentedOption
-                      className={classNames(
-                        "__wab_instance",
-                        sty.segmentedOption__rKrpK
-                      )}
-                      value={"Option 2"}
-                    >
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__eSpgO
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img___2QiZs)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"none"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          src={"https://static1.plasmic.app/home-outlined.svg"}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__wYinB
-                          )}
-                        >
-                          {"Option 2"}
-                        </div>
-                      </Stack__>
-                    </AntdSegmentedOption>
-                  </React.Fragment>
+                useChildren={
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : true
                 }
-                useSlotOptions={false}
-                value={generateStateValueProp($state, ["segmented", "value"])}
-              />
-
+                value={generateStateValueProp($state, [
+                  "askAdLofGettingDressed",
+                  "value"
+                ])}
+              >
+                <AntdRadio
+                  className={classNames("__wab_instance", sty.radio___6SYbu)}
+                  value={"5"}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__tEpbp
+                    )}
+                  >
+                    {"\u5bb9\u6613\u5b8c\u6210"}
+                  </div>
+                </AntdRadio>
+                <AntdRadio
+                  className={classNames("__wab_instance", sty.radio___5NwUj)}
+                  value={"3"}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__e36C
+                    )}
+                  >
+                    {"\u52c9\u5f3a\u5b8c\u6210"}
+                  </div>
+                </AntdRadio>
+                <AntdRadio
+                  className={classNames("__wab_instance", sty.radio__bHywi)}
+                  value={"0"}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__li5Uz
+                    )}
+                  >
+                    {"\u65e0\u6cd5\u5b8c\u6210"}
+                  </div>
+                </AntdRadio>
+              </AntdRadioGroup>
               <div className={classNames(projectcss.all, sty.freeBox__yHiN0)}>
                 <div
                   className={classNames(
@@ -1135,115 +1751,80 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   {"\u68b3\u5934"}
                 </div>
-                <AntdSegmented
-                  data-plasmic-name={"segmented4"}
-                  data-plasmic-override={overrides.segmented4}
-                  className={classNames("__wab_instance", sty.segmented4)}
+                <AntdRadioGroup
+                  data-plasmic-name={"askAdLofCombing"}
+                  data-plasmic-override={overrides.askAdLofCombing}
+                  className={classNames("__wab_instance", sty.askAdLofCombing)}
                   onChange={generateStateOnChangeProp($state, [
-                    "segmented4",
+                    "askAdLofCombing",
                     "value"
                   ])}
+                  optionType={"button"}
                   options={(() => {
                     const __composite = [
-                      { label: null, value: "Option 1" },
-                      { label: null, value: "Option 2" },
-                      { label: null, value: "Option 3" }
+                      { value: "option1", label: null },
+                      { value: "option2", label: null },
+                      { value: null, label: null }
                     ];
                     __composite["0"]["label"] = "\u5bb9\u6613\u5b8c\u6210";
                     __composite["1"]["label"] = "\u52c9\u5f3a\u5b8c\u6210";
+                    __composite["2"]["value"] = "option 3";
                     __composite["2"]["label"] = "\u65e0\u6cd5\u5b8c\u6210";
                     return __composite;
                   })()}
-                  optionsSlot={
-                    <React.Fragment>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__sgwXg
-                        )}
-                        value={"Option 1"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__vWUiF
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__xriRw)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___7ZYrw
-                            )}
-                          >
-                            {"Option 1"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__fjcAc
-                        )}
-                        value={"Option 2"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__l0Mrr
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__sduRv)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__epdb8
-                            )}
-                          >
-                            {"Option 2"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                    </React.Fragment>
+                  useChildren={
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
                   }
-                  useSlotOptions={false}
                   value={generateStateValueProp($state, [
-                    "segmented4",
+                    "askAdLofCombing",
                     "value"
                   ])}
-                />
+                >
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__jEmm5)}
+                    value={"5"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___9MRrD
+                      )}
+                    >
+                      {"\u5bb9\u6613\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__gshWp)}
+                    value={"3"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__dnPd1
+                      )}
+                    >
+                      {"\u52c9\u5f3a\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__awvBu)}
+                    value={"0"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__qv3Cs
+                      )}
+                    >
+                      {"\u65e0\u6cd5\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                </AntdRadioGroup>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__dG3Xt)}>
                 <div
@@ -1255,115 +1836,83 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   {"\u7ffb\u8863\u9886"}
                 </div>
-                <AntdSegmented
-                  data-plasmic-name={"segmented5"}
-                  data-plasmic-override={overrides.segmented5}
-                  className={classNames("__wab_instance", sty.segmented5)}
+                <AntdRadioGroup
+                  data-plasmic-name={"askAdLofTurnDownTheCollar"}
+                  data-plasmic-override={overrides.askAdLofTurnDownTheCollar}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.askAdLofTurnDownTheCollar
+                  )}
                   onChange={generateStateOnChangeProp($state, [
-                    "segmented5",
+                    "askAdLofTurnDownTheCollar",
                     "value"
                   ])}
+                  optionType={"button"}
                   options={(() => {
                     const __composite = [
-                      { label: null, value: "Option 1" },
-                      { label: null, value: "Option 2" },
-                      { label: null, value: "Option 3" }
+                      { value: "option1", label: null },
+                      { value: "option2", label: null },
+                      { value: null, label: null }
                     ];
                     __composite["0"]["label"] = "\u5bb9\u6613\u5b8c\u6210";
                     __composite["1"]["label"] = "\u52c9\u5f3a\u5b8c\u6210";
+                    __composite["2"]["value"] = "option 3";
                     __composite["2"]["label"] = "\u65e0\u6cd5\u5b8c\u6210";
                     return __composite;
                   })()}
-                  optionsSlot={
-                    <React.Fragment>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__p12T3
-                        )}
-                        value={"Option 1"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__xfJtN
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__zg2Er)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__fYw0
-                            )}
-                          >
-                            {"Option 1"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__c5F0C
-                        )}
-                        value={"Option 2"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__z0Emg
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img___3UuTo)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__aqSzr
-                            )}
-                          >
-                            {"Option 2"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                    </React.Fragment>
+                  useChildren={
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
                   }
-                  useSlotOptions={false}
                   value={generateStateValueProp($state, [
-                    "segmented5",
+                    "askAdLofTurnDownTheCollar",
                     "value"
                   ])}
-                />
+                >
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__yZnBm)}
+                    value={"5"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__dxfJh
+                      )}
+                    >
+                      {"\u5bb9\u6613\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio___3Uq2A)}
+                    value={"3"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__dp6Y4
+                      )}
+                    >
+                      {"\u52c9\u5f3a\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio___3O5Ff)}
+                    value={"0"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__bwfB3
+                      )}
+                    >
+                      {"\u65e0\u6cd5\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                </AntdRadioGroup>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox___7Oan4)}>
                 <div
@@ -1375,115 +1924,83 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   {"\u7cfb\u56f4\u88d9"}
                 </div>
-                <AntdSegmented
-                  data-plasmic-name={"segmented6"}
-                  data-plasmic-override={overrides.segmented6}
-                  className={classNames("__wab_instance", sty.segmented6)}
+                <AntdRadioGroup
+                  data-plasmic-name={"askAdLofWearingAnApron"}
+                  data-plasmic-override={overrides.askAdLofWearingAnApron}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.askAdLofWearingAnApron
+                  )}
                   onChange={generateStateOnChangeProp($state, [
-                    "segmented6",
+                    "askAdLofWearingAnApron",
                     "value"
                   ])}
+                  optionType={"button"}
                   options={(() => {
                     const __composite = [
-                      { label: null, value: "Option 1" },
-                      { label: null, value: "Option 2" },
-                      { label: null, value: "Option 3" }
+                      { value: "option1", label: null },
+                      { value: "option2", label: null },
+                      { value: null, label: null }
                     ];
                     __composite["0"]["label"] = "\u5bb9\u6613\u5b8c\u6210";
                     __composite["1"]["label"] = "\u52c9\u5f3a\u5b8c\u6210";
+                    __composite["2"]["value"] = "option 3";
                     __composite["2"]["label"] = "\u65e0\u6cd5\u5b8c\u6210";
                     return __composite;
                   })()}
-                  optionsSlot={
-                    <React.Fragment>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__azyzF
-                        )}
-                        value={"Option 1"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__ewTBi
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__oyJ9Y)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__erxj5
-                            )}
-                          >
-                            {"Option 1"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__gUck
-                        )}
-                        value={"Option 2"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__aMZdU
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__ni0VM)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___4Jltx
-                            )}
-                          >
-                            {"Option 2"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                    </React.Fragment>
+                  useChildren={
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
                   }
-                  useSlotOptions={false}
                   value={generateStateValueProp($state, [
-                    "segmented6",
+                    "askAdLofWearingAnApron",
                     "value"
                   ])}
-                />
+                >
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__ci9IR)}
+                    value={"5"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__b5Hlo
+                      )}
+                    >
+                      {"\u5bb9\u6613\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__rRteN)}
+                    value={"3"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__qHyAn
+                      )}
+                    >
+                      {"\u52c9\u5f3a\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__alu2U)}
+                    value={"0"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__q1WPl
+                      )}
+                    >
+                      {"\u65e0\u6cd5\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                </AntdRadioGroup>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox___9LfeL)}>
                 <div
@@ -1495,115 +2012,83 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   {"\u4f7f\u7528\u624b\u7eb8"}
                 </div>
-                <AntdSegmented
-                  data-plasmic-name={"segmented7"}
-                  data-plasmic-override={overrides.segmented7}
-                  className={classNames("__wab_instance", sty.segmented7)}
+                <AntdRadioGroup
+                  data-plasmic-name={"askAdLofUsingToiletPaper"}
+                  data-plasmic-override={overrides.askAdLofUsingToiletPaper}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.askAdLofUsingToiletPaper
+                  )}
                   onChange={generateStateOnChangeProp($state, [
-                    "segmented7",
+                    "askAdLofUsingToiletPaper",
                     "value"
                   ])}
+                  optionType={"button"}
                   options={(() => {
                     const __composite = [
-                      { label: null, value: "Option 1" },
-                      { label: null, value: "Option 2" },
-                      { label: null, value: "Option 3" }
+                      { value: "option1", label: null },
+                      { value: "option2", label: null },
+                      { value: null, label: null }
                     ];
                     __composite["0"]["label"] = "\u5bb9\u6613\u5b8c\u6210";
                     __composite["1"]["label"] = "\u52c9\u5f3a\u5b8c\u6210";
+                    __composite["2"]["value"] = "option 3";
                     __composite["2"]["label"] = "\u65e0\u6cd5\u5b8c\u6210";
                     return __composite;
                   })()}
-                  optionsSlot={
-                    <React.Fragment>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__prB6Z
-                        )}
-                        value={"Option 1"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__ix0Zv
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__xvi4O)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__o3MWv
-                            )}
-                          >
-                            {"Option 1"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__sViv8
-                        )}
-                        value={"Option 2"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___7X6Z9
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__dHxR)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__haB0Q
-                            )}
-                          >
-                            {"Option 2"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                    </React.Fragment>
+                  useChildren={
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
                   }
-                  useSlotOptions={false}
                   value={generateStateValueProp($state, [
-                    "segmented7",
+                    "askAdLofUsingToiletPaper",
                     "value"
                   ])}
-                />
+                >
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__ex09L)}
+                    value={"5"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__u3KoR
+                      )}
+                    >
+                      {"\u5bb9\u6613\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__mG13G)}
+                    value={"3"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hTh8R
+                      )}
+                    >
+                      {"\u52c9\u5f3a\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__pm4T5)}
+                    value={"0"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__mAqby
+                      )}
+                    >
+                      {"\u65e0\u6cd5\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                </AntdRadioGroup>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox___2OPUy)}>
                 <div
@@ -1615,115 +2100,85 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   {"\u64e6\u5bf9\u4fa7\u814b\u7a9d"}
                 </div>
-                <AntdSegmented
-                  data-plasmic-name={"segmented8"}
-                  data-plasmic-override={overrides.segmented8}
-                  className={classNames("__wab_instance", sty.segmented8)}
+                <AntdRadioGroup
+                  data-plasmic-name={"askAdLofRubbingTheOppositeArmpit"}
+                  data-plasmic-override={
+                    overrides.askAdLofRubbingTheOppositeArmpit
+                  }
+                  className={classNames(
+                    "__wab_instance",
+                    sty.askAdLofRubbingTheOppositeArmpit
+                  )}
                   onChange={generateStateOnChangeProp($state, [
-                    "segmented8",
+                    "askAdLofRubbingTheOppositeArmpit",
                     "value"
                   ])}
+                  optionType={"button"}
                   options={(() => {
                     const __composite = [
-                      { label: null, value: "Option 1" },
-                      { label: null, value: "Option 2" },
-                      { label: null, value: "Option 3" }
+                      { value: "option1", label: null },
+                      { value: "option2", label: null },
+                      { value: null, label: null }
                     ];
                     __composite["0"]["label"] = "\u5bb9\u6613\u5b8c\u6210";
                     __composite["1"]["label"] = "\u52c9\u5f3a\u5b8c\u6210";
+                    __composite["2"]["value"] = "option 3";
                     __composite["2"]["label"] = "\u65e0\u6cd5\u5b8c\u6210";
                     return __composite;
                   })()}
-                  optionsSlot={
-                    <React.Fragment>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__f4E5R
-                        )}
-                        value={"Option 1"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__jCxJs
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__hOik)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__v4DAn
-                            )}
-                          >
-                            {"Option 1"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__xrLpm
-                        )}
-                        value={"Option 2"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__n1Oce
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__iX57I)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__xYr1X
-                            )}
-                          >
-                            {"Option 2"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                    </React.Fragment>
+                  useChildren={
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
                   }
-                  useSlotOptions={false}
                   value={generateStateValueProp($state, [
-                    "segmented8",
+                    "askAdLofRubbingTheOppositeArmpit",
                     "value"
                   ])}
-                />
+                >
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__uuByX)}
+                    value={"5"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__llZt9
+                      )}
+                    >
+                      {"\u5bb9\u6613\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__fapUz)}
+                    value={"3"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___1TxPc
+                      )}
+                    >
+                      {"\u52c9\u5f3a\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__pa7Ri)}
+                    value={"0"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___5Eb97
+                      )}
+                    >
+                      {"\u65e0\u6cd5\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                </AntdRadioGroup>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox___0Bvqd)}>
                 <div
@@ -1735,142 +2190,153 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   {"\u7cfb\u8170\u5e26"}
                 </div>
-                <AntdSegmented
-                  data-plasmic-name={"segmented9"}
-                  data-plasmic-override={overrides.segmented9}
-                  className={classNames("__wab_instance", sty.segmented9)}
+                <AntdRadioGroup
+                  data-plasmic-name={"askAdLofFasteningTheBelt"}
+                  data-plasmic-override={overrides.askAdLofFasteningTheBelt}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.askAdLofFasteningTheBelt
+                  )}
                   onChange={generateStateOnChangeProp($state, [
-                    "segmented9",
+                    "askAdLofFasteningTheBelt",
                     "value"
                   ])}
+                  optionType={"button"}
                   options={(() => {
                     const __composite = [
-                      { label: null, value: "Option 1" },
-                      { label: null, value: "Option 2" },
-                      { label: null, value: "Option 3" }
+                      { value: "option1", label: null },
+                      { value: "option2", label: null },
+                      { value: null, label: null }
                     ];
                     __composite["0"]["label"] = "\u5bb9\u6613\u5b8c\u6210";
                     __composite["1"]["label"] = "\u52c9\u5f3a\u5b8c\u6210";
+                    __composite["2"]["value"] = "option 3";
                     __composite["2"]["label"] = "\u65e0\u6cd5\u5b8c\u6210";
                     return __composite;
                   })()}
-                  optionsSlot={
-                    <React.Fragment>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__gZsm
-                        )}
-                        value={"Option 1"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__sqKar
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__y93Zd)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__uoeTa
-                            )}
-                          >
-                            {"Option 1"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                      <AntdSegmentedOption
-                        className={classNames(
-                          "__wab_instance",
-                          sty.segmentedOption__biuF5
-                        )}
-                        value={"Option 2"}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___2Z
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__cCTu)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"none"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            src={
-                              "https://static1.plasmic.app/home-outlined.svg"
-                            }
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__yKMc
-                            )}
-                          >
-                            {"Option 2"}
-                          </div>
-                        </Stack__>
-                      </AntdSegmentedOption>
-                    </React.Fragment>
+                  useChildren={
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
                   }
-                  useSlotOptions={false}
                   value={generateStateValueProp($state, [
-                    "segmented9",
+                    "askAdLofFasteningTheBelt",
                     "value"
                   ])}
-                />
+                >
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio___0A3S1)}
+                    value={"5"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__cOlTh
+                      )}
+                    >
+                      {"\u5bb9\u6613\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio__pYrE)}
+                    value={"3"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___3Tbmo
+                      )}
+                    >
+                      {"\u52c9\u5f3a\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                  <AntdRadio
+                    className={classNames("__wab_instance", sty.radio___3BOr)}
+                    value={"0"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__yq2Fr
+                      )}
+                    >
+                      {"\u65e0\u6cd5\u5b8c\u6210"}
+                    </div>
+                  </AntdRadio>
+                </AntdRadioGroup>
               </div>
             </div>
-            <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
-              color={"green"}
-              startIcon={
-                <ChecksvgIcon
-                  data-plasmic-name={"svg"}
-                  data-plasmic-override={overrides.svg}
-                  className={classNames(projectcss.all, sty.svg)}
-                  role={"img"}
-                />
-              }
-              submitsForm={false}
+            <AntdTooltip
+              data-plasmic-name={"tooltip"}
+              data-plasmic-override={overrides.tooltip}
+              className={classNames("__wab_instance", sty.tooltip)}
+              titleText={"Tooltip contents"}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__zqpbp
-                )}
+              <Button
+                data-plasmic-name={"button"}
+                data-plasmic-override={overrides.button}
+                className={classNames("__wab_instance", sty.button)}
+                color={"green"}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["useIntegration"] =
+                    $state.shoulderFlexionArom.files.length &&
+                    $state.askAdLofCombing.value
+                      ? (() => {
+                          const actionArgs = {};
+                          return (async ({ dataOp, continueOnError }) => {
+                            try {
+                              const response = await executePlasmicDataOp(
+                                dataOp,
+                                {
+                                  userAuthToken: dataSourcesCtx?.userAuthToken,
+                                  user: dataSourcesCtx?.user
+                                }
+                              );
+                              await plasmicInvalidate(dataOp.invalidatedKeys);
+                              return response;
+                            } catch (e) {
+                              if (!continueOnError) {
+                                throw e;
+                              }
+                              return e;
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["useIntegration"] != null &&
+                    typeof $steps["useIntegration"] === "object" &&
+                    typeof $steps["useIntegration"].then === "function"
+                  ) {
+                    $steps["useIntegration"] = await $steps["useIntegration"];
+                  }
+                }}
+                startIcon={
+                  <ChecksvgIcon
+                    data-plasmic-name={"svg"}
+                    data-plasmic-override={overrides.svg}
+                    className={classNames(projectcss.all, sty.svg)}
+                    role={"img"}
+                  />
+                }
+                submitsForm={false}
               >
-                {"\u63d0\u4ea4"}
-              </div>
-            </Button>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__zqpbp
+                  )}
+                >
+                  {"\u63d0\u4ea4"}
+                </div>
+              </Button>
+            </AntdTooltip>
           </div>
         </div>
       </div>
@@ -1881,29 +2347,49 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "selectOfPain",
-    "qianquRom",
-    "select",
-    "segmented",
-    "segmented4",
-    "segmented5",
-    "segmented6",
-    "segmented7",
-    "segmented8",
-    "segmented9",
+    "askPain",
+    "shoulderFlexionArom",
+    "shoulderFlexionProm",
+    "shoulderAbductionArom",
+    "shoulderAbductionProm",
+    "shoulderLateralRotationArom",
+    "shoulderLateralRotationProm",
+    "shoulderMedialRotationArom",
+    "shoulderMedialRotationProm",
+    "shoulderExtensionArom",
+    "shoulderExtensionProm",
+    "askMuscleStrength",
+    "askAdLofGettingDressed",
+    "askAdLofCombing",
+    "askAdLofTurnDownTheCollar",
+    "askAdLofWearingAnApron",
+    "askAdLofUsingToiletPaper",
+    "askAdLofRubbingTheOppositeArmpit",
+    "askAdLofFasteningTheBelt",
+    "tooltip",
     "button",
     "svg"
   ],
-  selectOfPain: ["selectOfPain"],
-  qianquRom: ["qianquRom"],
-  select: ["select"],
-  segmented: ["segmented"],
-  segmented4: ["segmented4"],
-  segmented5: ["segmented5"],
-  segmented6: ["segmented6"],
-  segmented7: ["segmented7"],
-  segmented8: ["segmented8"],
-  segmented9: ["segmented9"],
+  askPain: ["askPain"],
+  shoulderFlexionArom: ["shoulderFlexionArom"],
+  shoulderFlexionProm: ["shoulderFlexionProm"],
+  shoulderAbductionArom: ["shoulderAbductionArom"],
+  shoulderAbductionProm: ["shoulderAbductionProm"],
+  shoulderLateralRotationArom: ["shoulderLateralRotationArom"],
+  shoulderLateralRotationProm: ["shoulderLateralRotationProm"],
+  shoulderMedialRotationArom: ["shoulderMedialRotationArom"],
+  shoulderMedialRotationProm: ["shoulderMedialRotationProm"],
+  shoulderExtensionArom: ["shoulderExtensionArom"],
+  shoulderExtensionProm: ["shoulderExtensionProm"],
+  askMuscleStrength: ["askMuscleStrength"],
+  askAdLofGettingDressed: ["askAdLofGettingDressed"],
+  askAdLofCombing: ["askAdLofCombing"],
+  askAdLofTurnDownTheCollar: ["askAdLofTurnDownTheCollar"],
+  askAdLofWearingAnApron: ["askAdLofWearingAnApron"],
+  askAdLofUsingToiletPaper: ["askAdLofUsingToiletPaper"],
+  askAdLofRubbingTheOppositeArmpit: ["askAdLofRubbingTheOppositeArmpit"],
+  askAdLofFasteningTheBelt: ["askAdLofFasteningTheBelt"],
+  tooltip: ["tooltip", "button", "svg"],
   button: ["button", "svg"],
   svg: ["svg"]
 } as const;
@@ -1912,16 +2398,26 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  selectOfPain: typeof Select;
-  qianquRom: "div";
-  select: typeof Select;
-  segmented: typeof AntdSegmented;
-  segmented4: typeof AntdSegmented;
-  segmented5: typeof AntdSegmented;
-  segmented6: typeof AntdSegmented;
-  segmented7: typeof AntdSegmented;
-  segmented8: typeof AntdSegmented;
-  segmented9: typeof AntdSegmented;
+  askPain: typeof Select;
+  shoulderFlexionArom: typeof UploadWrapper;
+  shoulderFlexionProm: typeof UploadWrapper;
+  shoulderAbductionArom: typeof UploadWrapper;
+  shoulderAbductionProm: typeof UploadWrapper;
+  shoulderLateralRotationArom: typeof UploadWrapper;
+  shoulderLateralRotationProm: typeof UploadWrapper;
+  shoulderMedialRotationArom: typeof UploadWrapper;
+  shoulderMedialRotationProm: typeof UploadWrapper;
+  shoulderExtensionArom: typeof UploadWrapper;
+  shoulderExtensionProm: typeof UploadWrapper;
+  askMuscleStrength: typeof Select;
+  askAdLofGettingDressed: typeof AntdRadioGroup;
+  askAdLofCombing: typeof AntdRadioGroup;
+  askAdLofTurnDownTheCollar: typeof AntdRadioGroup;
+  askAdLofWearingAnApron: typeof AntdRadioGroup;
+  askAdLofUsingToiletPaper: typeof AntdRadioGroup;
+  askAdLofRubbingTheOppositeArmpit: typeof AntdRadioGroup;
+  askAdLofFasteningTheBelt: typeof AntdRadioGroup;
+  tooltip: typeof AntdTooltip;
   button: typeof Button;
   svg: "svg";
 };
@@ -1986,16 +2482,32 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    selectOfPain: makeNodeComponent("selectOfPain"),
-    qianquRom: makeNodeComponent("qianquRom"),
-    select: makeNodeComponent("select"),
-    segmented: makeNodeComponent("segmented"),
-    segmented4: makeNodeComponent("segmented4"),
-    segmented5: makeNodeComponent("segmented5"),
-    segmented6: makeNodeComponent("segmented6"),
-    segmented7: makeNodeComponent("segmented7"),
-    segmented8: makeNodeComponent("segmented8"),
-    segmented9: makeNodeComponent("segmented9"),
+    askPain: makeNodeComponent("askPain"),
+    shoulderFlexionArom: makeNodeComponent("shoulderFlexionArom"),
+    shoulderFlexionProm: makeNodeComponent("shoulderFlexionProm"),
+    shoulderAbductionArom: makeNodeComponent("shoulderAbductionArom"),
+    shoulderAbductionProm: makeNodeComponent("shoulderAbductionProm"),
+    shoulderLateralRotationArom: makeNodeComponent(
+      "shoulderLateralRotationArom"
+    ),
+    shoulderLateralRotationProm: makeNodeComponent(
+      "shoulderLateralRotationProm"
+    ),
+    shoulderMedialRotationArom: makeNodeComponent("shoulderMedialRotationArom"),
+    shoulderMedialRotationProm: makeNodeComponent("shoulderMedialRotationProm"),
+    shoulderExtensionArom: makeNodeComponent("shoulderExtensionArom"),
+    shoulderExtensionProm: makeNodeComponent("shoulderExtensionProm"),
+    askMuscleStrength: makeNodeComponent("askMuscleStrength"),
+    askAdLofGettingDressed: makeNodeComponent("askAdLofGettingDressed"),
+    askAdLofCombing: makeNodeComponent("askAdLofCombing"),
+    askAdLofTurnDownTheCollar: makeNodeComponent("askAdLofTurnDownTheCollar"),
+    askAdLofWearingAnApron: makeNodeComponent("askAdLofWearingAnApron"),
+    askAdLofUsingToiletPaper: makeNodeComponent("askAdLofUsingToiletPaper"),
+    askAdLofRubbingTheOppositeArmpit: makeNodeComponent(
+      "askAdLofRubbingTheOppositeArmpit"
+    ),
+    askAdLofFasteningTheBelt: makeNodeComponent("askAdLofFasteningTheBelt"),
+    tooltip: makeNodeComponent("tooltip"),
     button: makeNodeComponent("button"),
     svg: makeNodeComponent("svg"),
 
