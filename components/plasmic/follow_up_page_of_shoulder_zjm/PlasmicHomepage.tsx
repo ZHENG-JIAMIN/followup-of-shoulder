@@ -59,13 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
-import {
-  executePlasmicDataOp,
-  usePlasmicDataOp,
-  usePlasmicInvalidate
-} from "@plasmicapp/react-web/lib/data-sources";
-
 import Select from "../../Select"; // plasmic-import: kSMvAbxe7o9l/component
 import UploadFiles from "../../UploadFiles"; // plasmic-import: uoD6g_MxRxrM/component
 import Upload from "../../Upload"; // plasmic-import: aJNGyiE-SJ0S/component
@@ -153,6 +146,8 @@ function PlasmicHomepage__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const $globalActions = useGlobalActions?.();
 
   const currentUser = useCurrentUser?.() || {};
 
@@ -271,6 +266,12 @@ function PlasmicHomepage__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "showTip",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -281,8 +282,6 @@ function PlasmicHomepage__RenderFunc(props: {
     $queries: {},
     $refs
   });
-  const dataSourcesCtx = usePlasmicDataSourceContext();
-  const plasmicInvalidate = usePlasmicInvalidate();
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantspn97G4HNqafa()
@@ -451,7 +450,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ color: "var(--token--ypw6enySR1T)" }}
                 >
-                  {"\u524d\u5c48\u89d2\u5ea6"}
+                  {"\u5916\u5c55\u89d2\u5ea6"}
                 </span>
                 <React.Fragment>
                   {
@@ -482,17 +481,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__uofEv)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_4Jpg.jpg",
+                  fullWidth: 1080,
+                  fullHeight: 1080,
                   aspectRatio: undefined
                 }}
               />
@@ -562,17 +561,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__xcls)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_11Jpg.jpg",
+                  fullWidth: 1464,
+                  fullHeight: 1464,
                   aspectRatio: undefined
                 }}
               />
@@ -640,7 +639,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ color: "var(--token--ypw6enySR1T)" }}
                 >
-                  {"\u5916\u5c55\u89d2\u5ea6"}
+                  {"\u524d\u5c48\u89d2\u5ea6"}
                 </span>
                 <React.Fragment>
                   {
@@ -671,17 +670,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__sk4Lv)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_2Jpg.jpg",
+                  fullWidth: 1080,
+                  fullHeight: 1080,
                   aspectRatio: undefined
                 }}
               />
@@ -751,17 +750,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__sMCnl)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_10Jpg.jpg",
+                  fullWidth: 1464,
+                  fullHeight: 1464,
                   aspectRatio: undefined
                 }}
               />
@@ -829,7 +828,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ color: "var(--token--ypw6enySR1T)" }}
                 >
-                  {"\u5916\u65cb\u89d2\u5ea6"}
+                  {"\u540e\u4f38\u89d2\u5ea6"}
                 </span>
                 <React.Fragment>
                   {
@@ -860,17 +859,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__xTwG5)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_1Jpg2.jpg",
+                  fullWidth: 1440,
+                  fullHeight: 1440,
                   aspectRatio: undefined
                 }}
               />
@@ -942,17 +941,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__qDtuq)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_9Jpg.jpg",
+                  fullWidth: 1464,
+                  fullHeight: 1464,
                   aspectRatio: undefined
                 }}
               />
@@ -1022,7 +1021,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ color: "var(--token--ypw6enySR1T)" }}
                 >
-                  {"\u5185\u65cb\u89d2\u5ea6"}
+                  {"\u5916\u65cb\u89d2\u5ea6"}
                 </span>
                 <React.Fragment>
                   {
@@ -1053,17 +1052,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__haHM)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_5Jpg.jpg",
+                  fullWidth: 1440,
+                  fullHeight: 1440,
                   aspectRatio: undefined
                 }}
               />
@@ -1133,17 +1132,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__o4YOj)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_6Jpg.jpg",
+                  fullWidth: 1464,
+                  fullHeight: 1464,
                   aspectRatio: undefined
                 }}
               />
@@ -1211,7 +1210,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ color: "var(--token--ypw6enySR1T)" }}
                 >
-                  {"\u540e\u4f38\u89d2\u5ea6"}
+                  {"\u5185\u65cb\u89d2\u5ea6"}
                 </span>
                 <React.Fragment>
                   {
@@ -1247,12 +1246,12 @@ function PlasmicHomepage__RenderFunc(props: {
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_3Jpg.jpg",
+                  fullWidth: 1440,
+                  fullHeight: 1440,
                   aspectRatio: undefined
                 }}
               />
@@ -1327,12 +1326,12 @@ function PlasmicHomepage__RenderFunc(props: {
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_8Jpg.jpg",
+                  fullWidth: 1464,
+                  fullHeight: 1464,
                   aspectRatio: undefined
                 }}
               />
@@ -1415,9 +1414,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 ];
                 __composite["0"]["value"] = "Option 1";
                 __composite["0"]["label"] =
-                  "5\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u5065\u4fa7\u624b\u7684\u963b\u529b\uff0c\u5e76\u80fd\u7ef4\u6301\u5bf9\u6297\u59ff\u52bf";
+                  "5\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u963b\u529b\uff0c\u5e76\u80fd\u7ef4\u6301\u5bf9\u6297\u59ff\u52bf";
                 __composite["1"]["label"] =
-                  "4\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u5065\u4fa7\u624b\u7684\u963b\u529b\uff0c\u4f46\u4e0d\u80fd\u7ef4\u6301\u5f88\u4e45";
+                  "4\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u963b\u529b\uff0c\u4f46\u4e0d\u80fd\u7ef4\u6301\u59ff\u52bf";
                 __composite["2"]["label"] =
                   "3\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u91cd\u529b\uff0c\u81ea\u4e3b\u5c06\u80a9\u5173\u8282\u5411\u5916\u6253\u5f00";
                 __composite["2"]["value"] = "option 3";
@@ -1467,17 +1466,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__uqugk)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_12Jpg.jpg",
+                    fullWidth: 1464,
+                    fullHeight: 1464,
                     aspectRatio: undefined
                   }}
                 />
@@ -1499,17 +1498,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__uJKda)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_7Jpg.jpg",
+                    fullWidth: 1464,
+                    fullHeight: 1464,
                     aspectRatio: undefined
                   }}
                 />
@@ -1531,17 +1530,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__xr7Ye)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_4Jpg.jpg",
+                    fullWidth: 1080,
+                    fullHeight: 1080,
                     aspectRatio: undefined
                   }}
                 />
@@ -1563,17 +1562,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__joDkQ)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_155Jpg.jpg",
+                    fullWidth: 1080,
+                    fullHeight: 1080,
                     aspectRatio: undefined
                   }}
                 />
@@ -1595,17 +1594,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__g4Wm0)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_14Jpg.jpg",
+                    fullWidth: 1080,
+                    fullHeight: 1080,
                     aspectRatio: undefined
                   }}
                 />
@@ -1627,17 +1626,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__a6Phi)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_13Jpg.jpg",
+                    fullWidth: 1080,
+                    fullHeight: 1080,
                     aspectRatio: undefined
                   }}
                 />
@@ -2268,6 +2267,38 @@ function PlasmicHomepage__RenderFunc(props: {
                   </AntdRadio>
                 </AntdRadioGroup>
               </div>
+              {(() => {
+                try {
+                  return $state.showTip;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__lVylM
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "var(--token-Bo2_tT25lwh4)" }}
+                    >
+                      {
+                        "\u8bf7\u586b\u5199\u5b8c\u6210\u6240\u6709\u95ee\u9898\uff01"
+                      }
+                    </span>
+                  </React.Fragment>
+                </div>
+              ) : null}
             </div>
             <AntdTooltip
               data-plasmic-name={"tooltip"}
@@ -2283,37 +2314,145 @@ function PlasmicHomepage__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["useIntegration"] =
-                    $state.shoulderFlexionArom.files.length &&
-                    $state.askAdLofCombing.value
-                      ? (() => {
-                          const actionArgs = {};
-                          return (async ({ dataOp, continueOnError }) => {
-                            try {
-                              const response = await executePlasmicDataOp(
-                                dataOp,
-                                {
-                                  userAuthToken: dataSourcesCtx?.userAuthToken,
-                                  user: dataSourcesCtx?.user
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.showTip = !(
+                              $state.shoulderFlexionArom.files.length &&
+                              $state.askAdLofCombing.value &&
+                              $state.askPain.value &&
+                              $state.askAdLofFasteningTheBelt.value &&
+                              $state.askAdLofGettingDressed.value &&
+                              $state.askAdLofRubbingTheOppositeArmpit.value &&
+                              $state.askAdLofTurnDownTheCollar.value &&
+                              $state.askAdLofUsingToiletPaper.value &&
+                              $state.askAdLofWearingAnApron.value &&
+                              $state.askMuscleStrength.value
+                            ));
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+
+                  $steps["invokeGlobalAction"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            undefined,
+                            (() => {
+                              try {
+                                return $state.shoulderFlexionArom.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
                                 }
-                              );
-                              await plasmicInvalidate(dataOp.invalidatedKeys);
-                              return response;
-                            } catch (e) {
-                              if (!continueOnError) {
                                 throw e;
                               }
-                              return e;
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
                   if (
-                    $steps["useIntegration"] != null &&
-                    typeof $steps["useIntegration"] === "object" &&
-                    typeof $steps["useIntegration"].then === "function"
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["useIntegration"] = await $steps["useIntegration"];
+                    $steps["invokeGlobalAction"] = await $steps[
+                      "invokeGlobalAction"
+                    ];
+                  }
+
+                  $steps["updateAskMuscleStrengthValue"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["askMuscleStrength", "value"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAskMuscleStrengthValue"] != null &&
+                    typeof $steps["updateAskMuscleStrengthValue"] ===
+                      "object" &&
+                    typeof $steps["updateAskMuscleStrengthValue"].then ===
+                      "function"
+                  ) {
+                    $steps["updateAskMuscleStrengthValue"] = await $steps[
+                      "updateAskMuscleStrengthValue"
+                    ];
+                  }
+
+                  $steps["updateAskMuscleStrengthValue2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["askMuscleStrength", "value"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAskMuscleStrengthValue2"] != null &&
+                    typeof $steps["updateAskMuscleStrengthValue2"] ===
+                      "object" &&
+                    typeof $steps["updateAskMuscleStrengthValue2"].then ===
+                      "function"
+                  ) {
+                    $steps["updateAskMuscleStrengthValue2"] = await $steps[
+                      "updateAskMuscleStrengthValue2"
+                    ];
                   }
                 }}
                 startIcon={

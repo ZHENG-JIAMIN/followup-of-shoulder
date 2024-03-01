@@ -13,6 +13,7 @@
     "@plasmicapp/react-web": "^0.2.321",
     "@plasmicpkgs/antd5": "^0.0.217",
     "@plasmicpkgs/radix-ui": "^0.0.45",
+    "axios": "^1.6.7",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"
