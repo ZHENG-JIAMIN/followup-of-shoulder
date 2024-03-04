@@ -521,20 +521,6 @@
       "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/plasmic.module.css",
       "components": [
         {
-          "id": "gS29OBnbSErN",
-          "name": "Homepage",
-          "type": "managed",
-          "projectId": "bQFzjFXbkpSsuDuBQNZ8MF",
-          "renderModuleFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicHomepage.tsx",
-          "importSpec": {
-            "modulePath": "../pages/index.tsx"
-          },
-          "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/"
-        },
-        {
           "id": "kSMvAbxe7o9l",
           "name": "Select",
           "type": "managed",
@@ -669,6 +655,34 @@
           "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicDialog.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "gS29OBnbSErN",
+          "name": "MobileShoulderFollowup",
+          "type": "managed",
+          "projectId": "bQFzjFXbkpSsuDuBQNZ8MF",
+          "renderModuleFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicMobileShoulderFollowup.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicMobileShoulderFollowup.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/"
+        },
+        {
+          "id": "1cUBbxNaO4UO",
+          "name": "WebsiteShoulderFollowup",
+          "type": "managed",
+          "projectId": "bQFzjFXbkpSsuDuBQNZ8MF",
+          "renderModuleFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicWebsiteShoulderFollowup.tsx",
+          "importSpec": {
+            "modulePath": "../pages/new-page-2.tsx"
+          },
+          "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicWebsiteShoulderFollowup.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page-2"
         }
       ],
       "icons": [
@@ -803,6 +817,26 @@
           "id": "aBYexceH05N2",
           "name": "13.jpg",
           "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_13Jpg.jpg"
+        },
+        {
+          "id": "ScLfgnWe0BZc",
+          "name": "14-2(1).jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_1421Jpg.jpg"
+        },
+        {
+          "id": "KhkU_olzTz0J",
+          "name": "13-2(1).jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_1321Jpg.jpg"
+        },
+        {
+          "id": "IDWGJqAthx8h",
+          "name": "疼痛.png 2",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/疼痛png2.png"
+        },
+        {
+          "id": "PHTJJQA_TCc2",
+          "name": "疼痛2.png",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/疼痛2Png.png"
         }
       ],
       "indirect": false,
@@ -837,7 +871,8 @@
       "globalContextsFilePath": "",
       "splitsProviderFilePath": "",
       "codeComponents": [],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {
