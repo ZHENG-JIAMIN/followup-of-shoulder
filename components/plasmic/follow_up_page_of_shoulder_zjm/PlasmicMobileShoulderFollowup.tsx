@@ -59,13 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
-import {
-  executePlasmicDataOp,
-  usePlasmicDataOp,
-  usePlasmicInvalidate
-} from "@plasmicapp/react-web/lib/data-sources";
-
 import Select from "../../Select"; // plasmic-import: kSMvAbxe7o9l/component
 import UploadFiles from "../../UploadFiles"; // plasmic-import: uoD6g_MxRxrM/component
 import Upload from "../../Upload"; // plasmic-import: aJNGyiE-SJ0S/component
@@ -74,6 +67,8 @@ import { AntdRadioGroup } from "@plasmicpkgs/antd5/skinny/registerRadio";
 import { AntdRadio } from "@plasmicpkgs/antd5/skinny/registerRadio";
 import { AntdTooltip } from "@plasmicpkgs/antd5/skinny/registerTooltip";
 import Button from "../../Button"; // plasmic-import: a1WfQs9Vt8cw/component
+import Dialog from "../../Dialog"; // plasmic-import: wTSBbjdFii9t/component
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 
 import { useScreenVariants as useScreenVariantspn97G4HNqafa } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Pn97G4hNqafa/globalVariant
 
@@ -81,23 +76,24 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: bQFzjFXbkpSsuDuBQNZ8MF/projectcss
-import sty from "./PlasmicHomepage.module.css"; // plasmic-import: gS29OBnbSErN/css
+import sty from "./PlasmicMobileShoulderFollowup.module.css"; // plasmic-import: gS29OBnbSErN/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: 9NLJZlnVYXvs/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: jDpuVvrlPf7y/icon
 
 createPlasmicElementProxy;
 
-export type PlasmicHomepage__VariantMembers = {};
-export type PlasmicHomepage__VariantsArgs = {};
-type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
-export const PlasmicHomepage__VariantProps = new Array<VariantPropType>();
+export type PlasmicMobileShoulderFollowup__VariantMembers = {};
+export type PlasmicMobileShoulderFollowup__VariantsArgs = {};
+type VariantPropType = keyof PlasmicMobileShoulderFollowup__VariantsArgs;
+export const PlasmicMobileShoulderFollowup__VariantProps =
+  new Array<VariantPropType>();
 
-export type PlasmicHomepage__ArgsType = {};
-type ArgPropType = keyof PlasmicHomepage__ArgsType;
-export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
+export type PlasmicMobileShoulderFollowup__ArgsType = {};
+type ArgPropType = keyof PlasmicMobileShoulderFollowup__ArgsType;
+export const PlasmicMobileShoulderFollowup__ArgProps = new Array<ArgPropType>();
 
-export type PlasmicHomepage__OverridesType = {
+export type PlasmicMobileShoulderFollowup__OverridesType = {
   root?: Flex__<"div">;
   askPain?: Flex__<typeof Select>;
   shoulderFlexionArom?: Flex__<typeof UploadWrapper>;
@@ -119,11 +115,11 @@ export type PlasmicHomepage__OverridesType = {
   askAdLofRubbingTheOppositeArmpit?: Flex__<typeof AntdRadioGroup>;
   askAdLofFasteningTheBelt?: Flex__<typeof AntdRadioGroup>;
   tooltip?: Flex__<typeof AntdTooltip>;
-  button?: Flex__<typeof Button>;
   svg?: Flex__<"svg">;
+  dialog?: Flex__<typeof Dialog>;
 };
 
-export interface DefaultHomepageProps {}
+export interface DefaultMobileShoulderFollowupProps {}
 
 const $$ = {};
 
@@ -134,10 +130,10 @@ function useNextRouter() {
   return undefined;
 }
 
-function PlasmicHomepage__RenderFunc(props: {
-  variants: PlasmicHomepage__VariantsArgs;
-  args: PlasmicHomepage__ArgsType;
-  overrides: PlasmicHomepage__OverridesType;
+function PlasmicMobileShoulderFollowup__RenderFunc(props: {
+  variants: PlasmicMobileShoulderFollowup__VariantsArgs;
+  args: PlasmicMobileShoulderFollowup__ArgsType;
+  overrides: PlasmicMobileShoulderFollowup__OverridesType;
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
@@ -212,7 +208,20 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "shoulderFlexionArom.files",
         type: "private",
         variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return undefined;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return [];
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "shoulderFlexionProm.files",
@@ -273,6 +282,49 @@ function PlasmicHomepage__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "showTip",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "result",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+      },
+      {
+        path: "buttonText",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "\u63d0\u4ea4"
+      },
+      {
+        path: "dialog.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.showDialog;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "showDialog",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -283,8 +335,6 @@ function PlasmicHomepage__RenderFunc(props: {
     $queries: {},
     $refs
   });
-  const dataSourcesCtx = usePlasmicDataSourceContext();
-  const plasmicInvalidate = usePlasmicInvalidate();
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantspn97G4HNqafa()
@@ -376,26 +426,27 @@ function PlasmicHomepage__RenderFunc(props: {
               options={(() => {
                 const __composite = [
                   { value: null, label: null },
-                  { value: "option2", label: null },
+                  { value: null, label: null },
                   { label: null, value: null },
                   { value: null, label: null },
                   { value: null, label: null },
                   { value: null, label: null }
                 ];
-                __composite["0"]["value"] = "Option 1";
+                __composite["0"]["value"] = "30";
                 __composite["0"]["label"] = "\u65e0\u75db";
+                __composite["1"]["value"] = "25";
                 __composite["1"]["label"] =
                   "\u6709\u65f6\u7565\u5fae\u75bc\u75db";
                 __composite["2"]["label"] =
                   "\u8f7b\u5ea6\u75bc\u75db\uff0c\u666e\u901a\u6d3b\u52a8\u65e0\u969c\u788d";
-                __composite["2"]["value"] = "option 3";
-                __composite["3"]["value"] = "option 4";
+                __composite["2"]["value"] = "20";
+                __composite["3"]["value"] = "10";
                 __composite["3"]["label"] =
                   "\u4e2d\u5ea6\u75bc\u75db\uff0c\u80fd\u591f\u5fcd\u53d7";
-                __composite["4"]["value"] = "option 5";
+                __composite["4"]["value"] = "5";
                 __composite["4"]["label"] =
                   "\u91cd\u5ea6\u75bc\u75db\uff0c\u6d3b\u52a8\u4e25\u91cd\u53d7\u9650";
-                __composite["5"]["value"] = "option 6";
+                __composite["5"]["value"] = "0";
                 __composite["5"]["label"] =
                   "\u56e0\u75bc\u75db\u800c\u5b8c\u5168\u5e76\u4e0d\u80fd\u6d3b\u52a8";
                 return __composite;
@@ -418,17 +469,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__xUeUr)}
-                displayHeight={"auto"}
+                displayHeight={"184px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"auto"}
+                displayWidth={"366px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/疼痛png.png",
-                  fullWidth: 415,
-                  fullHeight: 219,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/疼痛2Png.png",
+                  fullWidth: 1092,
+                  fullHeight: 576,
                   aspectRatio: undefined
                 }}
               />
@@ -453,7 +504,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ color: "var(--token--ypw6enySR1T)" }}
                 >
-                  {"\u524d\u5c48\u89d2\u5ea6"}
+                  {"\u5916\u5c55\u89d2\u5ea6"}
                 </span>
                 <React.Fragment>
                   {
@@ -484,17 +535,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__uofEv)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_4Jpg.jpg",
+                  fullWidth: 1080,
+                  fullHeight: 1080,
                   aspectRatio: undefined
                 }}
               />
@@ -515,53 +566,10 @@ function PlasmicHomepage__RenderFunc(props: {
                       "files"
                     ])}
                     listType={"picture-card"}
-                    onFilesChange={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "shoulderFlexionArom",
-                        "files"
-                      ]).apply(null, eventArgs);
-                      (async files => {
-                        const $steps = {};
-
-                        $steps["invokeGlobalAction"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  undefined,
-                                  (() => {
-                                    try {
-                                      return $state.shoulderExtensionArom
-                                        .files[0];
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return undefined;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
-                                ]
-                              };
-                              return $globalActions[
-                                "GlobalContext.upload"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["invokeGlobalAction"] != null &&
-                          typeof $steps["invokeGlobalAction"] === "object" &&
-                          typeof $steps["invokeGlobalAction"].then ===
-                            "function"
-                        ) {
-                          $steps["invokeGlobalAction"] = await $steps[
-                            "invokeGlobalAction"
-                          ];
-                        }
-                      }).apply(null, eventArgs);
-                    }}
+                    onFilesChange={generateStateOnChangeProp($state, [
+                      "shoulderFlexionArom",
+                      "files"
+                    ])}
                     showUploadList={true}
                   >
                     <PlasmicImg__
@@ -607,17 +615,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__xcls)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_11Jpg.jpg",
+                  fullWidth: 1464,
+                  fullHeight: 1464,
                   aspectRatio: undefined
                 }}
               />
@@ -685,7 +693,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ color: "var(--token--ypw6enySR1T)" }}
                 >
-                  {"\u5916\u5c55\u89d2\u5ea6"}
+                  {"\u524d\u5c48\u89d2\u5ea6"}
                 </span>
                 <React.Fragment>
                   {
@@ -716,17 +724,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__sk4Lv)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_2Jpg.jpg",
+                  fullWidth: 1080,
+                  fullHeight: 1080,
                   aspectRatio: undefined
                 }}
               />
@@ -796,17 +804,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__sMCnl)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_10Jpg.jpg",
+                  fullWidth: 1464,
+                  fullHeight: 1464,
                   aspectRatio: undefined
                 }}
               />
@@ -874,7 +882,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ color: "var(--token--ypw6enySR1T)" }}
                 >
-                  {"\u5916\u65cb\u89d2\u5ea6"}
+                  {"\u540e\u4f38\u89d2\u5ea6"}
                 </span>
                 <React.Fragment>
                   {
@@ -905,17 +913,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__xTwG5)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_1Jpg2.jpg",
+                  fullWidth: 1440,
+                  fullHeight: 1440,
                   aspectRatio: undefined
                 }}
               />
@@ -987,17 +995,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__qDtuq)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_9Jpg.jpg",
+                  fullWidth: 1464,
+                  fullHeight: 1464,
                   aspectRatio: undefined
                 }}
               />
@@ -1067,7 +1075,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ color: "var(--token--ypw6enySR1T)" }}
                 >
-                  {"\u5185\u65cb\u89d2\u5ea6"}
+                  {"\u5916\u65cb\u89d2\u5ea6"}
                 </span>
                 <React.Fragment>
                   {
@@ -1098,17 +1106,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__haHM)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_5Jpg.jpg",
+                  fullWidth: 1440,
+                  fullHeight: 1440,
                   aspectRatio: undefined
                 }}
               />
@@ -1178,17 +1186,17 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__o4YOj)}
-                displayHeight={"auto"}
+                displayHeight={"110px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_6Jpg.jpg",
+                  fullWidth: 1464,
+                  fullHeight: 1464,
                   aspectRatio: undefined
                 }}
               />
@@ -1256,7 +1264,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ color: "var(--token--ypw6enySR1T)" }}
                 >
-                  {"\u540e\u4f38\u89d2\u5ea6"}
+                  {"\u5185\u65cb\u89d2\u5ea6"}
                 </span>
                 <React.Fragment>
                   {
@@ -1292,12 +1300,12 @@ function PlasmicHomepage__RenderFunc(props: {
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_3Jpg.jpg",
+                  fullWidth: 1440,
+                  fullHeight: 1440,
                   aspectRatio: undefined
                 }}
               />
@@ -1372,12 +1380,12 @@ function PlasmicHomepage__RenderFunc(props: {
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"158px"}
+                displayWidth={"110px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                  fullWidth: 383,
-                  fullHeight: 314,
+                  src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_8Jpg.jpg",
+                  fullWidth: 1464,
+                  fullHeight: 1464,
                   aspectRatio: undefined
                 }}
               />
@@ -1452,27 +1460,28 @@ function PlasmicHomepage__RenderFunc(props: {
               options={(() => {
                 const __composite = [
                   { value: null, label: null },
-                  { value: "option2", label: null },
+                  { value: null, label: null },
                   { label: null, value: null },
                   { value: null, label: null },
                   { value: null, label: null },
                   { value: null, label: null }
                 ];
-                __composite["0"]["value"] = "Option 1";
+                __composite["0"]["value"] = "5";
                 __composite["0"]["label"] =
-                  "5\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u5065\u4fa7\u624b\u7684\u963b\u529b\uff0c\u5e76\u80fd\u7ef4\u6301\u5bf9\u6297\u59ff\u52bf";
+                  "5\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u963b\u529b\uff0c\u5e76\u80fd\u7ef4\u6301\u5bf9\u6297\u59ff\u52bf";
+                __composite["1"]["value"] = "4";
                 __composite["1"]["label"] =
-                  "4\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u5065\u4fa7\u624b\u7684\u963b\u529b\uff0c\u4f46\u4e0d\u80fd\u7ef4\u6301\u5f88\u4e45";
+                  "4\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u963b\u529b\uff0c\u4f46\u4e0d\u80fd\u7ef4\u6301\u59ff\u52bf";
                 __composite["2"]["label"] =
                   "3\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u91cd\u529b\uff0c\u81ea\u4e3b\u5c06\u80a9\u5173\u8282\u5411\u5916\u6253\u5f00";
-                __composite["2"]["value"] = "option 3";
-                __composite["3"]["value"] = "option 4";
+                __composite["2"]["value"] = "3";
+                __composite["3"]["value"] = "2";
                 __composite["3"]["label"] =
                   "2\u7ea7\uff1a\u53ef\u4ee5\u5728\u5e73\u8eba\u4f4d\u7f6e\u4e0b\u5411\u5916\u4f38\u5c55\u80a9\u5173\u8282";
-                __composite["4"]["value"] = "option 5";
+                __composite["4"]["value"] = "1";
                 __composite["4"]["label"] =
                   "1\u7ea7\uff1a\u65e0\u6cd5\u5728\u5e73\u8eba\u60c5\u51b5\u5411\u5916\u6253\u5f00\u80a9\u5173\u8282\uff0c\u4f46\u662f\u80fd\u6478\u5230\u808c\u8089\u5728\u6536\u7d27";
-                __composite["5"]["value"] = "option 6";
+                __composite["5"]["value"] = "0";
                 __composite["5"]["label"] =
                   "0\u7ea7\uff1a\u65e0\u6cd5\u5728\u5e73\u8eba\u60c5\u51b5\u5411\u5916\u6253\u5f00\u80a9\u5173\u8282\uff0c\u4e5f\u4e0d\u80fd\u6478\u5230\u808c\u8089\u5728\u6536\u7d27";
                 return __composite;
@@ -1512,17 +1521,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__uqugk)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_12Jpg.jpg",
+                    fullWidth: 1464,
+                    fullHeight: 1464,
                     aspectRatio: undefined
                   }}
                 />
@@ -1544,17 +1553,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__uJKda)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_7Jpg.jpg",
+                    fullWidth: 1464,
+                    fullHeight: 1464,
                     aspectRatio: undefined
                   }}
                 />
@@ -1576,17 +1585,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__xr7Ye)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_4Jpg.jpg",
+                    fullWidth: 1080,
+                    fullHeight: 1080,
                     aspectRatio: undefined
                   }}
                 />
@@ -1608,17 +1617,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__joDkQ)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_155Jpg.jpg",
+                    fullWidth: 1080,
+                    fullHeight: 1080,
                     aspectRatio: undefined
                   }}
                 />
@@ -1640,17 +1649,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__g4Wm0)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_1421Jpg.jpg",
+                    fullWidth: 1080,
+                    fullHeight: 1080,
                     aspectRatio: undefined
                   }}
                 />
@@ -1672,17 +1681,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__a6Phi)}
-                  displayHeight={"auto"}
+                  displayHeight={"110px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"158px"}
+                  displayWidth={"110px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/演示图片png.png",
-                    fullWidth: 383,
-                    fullHeight: 314,
+                    src: "/plasmic/follow_up_page_of_shoulder_zjm/images/_1321Jpg.jpg",
+                    fullWidth: 1080,
+                    fullHeight: 1080,
                     aspectRatio: undefined
                   }}
                 />
@@ -2313,52 +2322,913 @@ function PlasmicHomepage__RenderFunc(props: {
                   </AntdRadio>
                 </AntdRadioGroup>
               </div>
+              {(() => {
+                try {
+                  return $state.showTip;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__lVylM
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "var(--token-Bo2_tT25lwh4)" }}
+                    >
+                      {
+                        "\u8bf7\u586b\u5199\u5b8c\u6210\u6240\u6709\u95ee\u9898\uff01"
+                      }
+                    </span>
+                  </React.Fragment>
+                </div>
+              ) : null}
             </div>
             <AntdTooltip
               data-plasmic-name={"tooltip"}
               data-plasmic-override={overrides.tooltip}
               className={classNames("__wab_instance", sty.tooltip)}
-              titleText={"Tooltip contents"}
+              titleText={``}
             >
               <Button
-                data-plasmic-name={"button"}
-                data-plasmic-override={overrides.button}
-                className={classNames("__wab_instance", sty.button)}
+                className={classNames("__wab_instance", sty.button__nsdFk)}
                 color={"green"}
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["useIntegration"] =
-                    $state.shoulderFlexionArom.files.length &&
-                    $state.askAdLofCombing.value
-                      ? (() => {
-                          const actionArgs = {};
-                          return (async ({ dataOp, continueOnError }) => {
-                            try {
-                              const response = await executePlasmicDataOp(
-                                dataOp,
-                                {
-                                  userAuthToken: dataSourcesCtx?.userAuthToken,
-                                  user: dataSourcesCtx?.user
+                  $steps["check"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.showTip = !(
+                              $state.shoulderFlexionArom.files?.length &&
+                              $state.shoulderFlexionProm.files?.length &&
+                              $state.shoulderAbductionArom.files?.length &&
+                              $state.shoulderAbductionProm.files?.length &&
+                              $state.shoulderLateralRotationArom.files
+                                ?.length &&
+                              $state.shoulderLateralRotationProm.files
+                                ?.length &&
+                              $state.shoulderMedialRotationArom.files?.length &&
+                              $state.shoulderMedialRotationProm.files?.length &&
+                              $state.shoulderExtensionArom.files?.length &&
+                              $state.shoulderExtensionProm.files?.length &&
+                              $state.askAdLofCombing.value &&
+                              $state.askPain.value &&
+                              $state.askAdLofFasteningTheBelt.value &&
+                              $state.askAdLofGettingDressed.value &&
+                              $state.askAdLofRubbingTheOppositeArmpit.value &&
+                              $state.askAdLofTurnDownTheCollar.value &&
+                              $state.askAdLofUsingToiletPaper.value &&
+                              $state.askAdLofWearingAnApron.value &&
+                              $state.askMuscleStrength.value
+                            ));
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["check"] != null &&
+                    typeof $steps["check"] === "object" &&
+                    typeof $steps["check"].then === "function"
+                  ) {
+                    $steps["check"] = await $steps["check"];
+                  }
+
+                  $steps["waiting"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.buttonText = "上传中...");
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["waiting"] != null &&
+                    typeof $steps["waiting"] === "object" &&
+                    typeof $steps["waiting"].then === "function"
+                  ) {
+                    $steps["waiting"] = await $steps["waiting"];
+                  }
+
+                  $steps["invokeGlobalAction"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
                                 }
-                              );
-                              await plasmicInvalidate(dataOp.invalidatedKeys);
-                              return response;
-                            } catch (e) {
-                              if (!continueOnError) {
                                 throw e;
                               }
-                              return e;
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderFlexionArom.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
                   if (
-                    $steps["useIntegration"] != null &&
-                    typeof $steps["useIntegration"] === "object" &&
-                    typeof $steps["useIntegration"].then === "function"
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["useIntegration"] = await $steps["useIntegration"];
+                    $steps["invokeGlobalAction"] = await $steps[
+                      "invokeGlobalAction"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction2"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderFlexionProm.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction2"] != null &&
+                    typeof $steps["invokeGlobalAction2"] === "object" &&
+                    typeof $steps["invokeGlobalAction2"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction2"] = await $steps[
+                      "invokeGlobalAction2"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction3"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderAbductionArom.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction3"] != null &&
+                    typeof $steps["invokeGlobalAction3"] === "object" &&
+                    typeof $steps["invokeGlobalAction3"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction3"] = await $steps[
+                      "invokeGlobalAction3"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction4"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderAbductionProm.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction4"] != null &&
+                    typeof $steps["invokeGlobalAction4"] === "object" &&
+                    typeof $steps["invokeGlobalAction4"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction4"] = await $steps[
+                      "invokeGlobalAction4"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction5"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderLateralRotationArom
+                                  .files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction5"] != null &&
+                    typeof $steps["invokeGlobalAction5"] === "object" &&
+                    typeof $steps["invokeGlobalAction5"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction5"] = await $steps[
+                      "invokeGlobalAction5"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction6"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderLateralRotationProm
+                                  .files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction6"] != null &&
+                    typeof $steps["invokeGlobalAction6"] === "object" &&
+                    typeof $steps["invokeGlobalAction6"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction6"] = await $steps[
+                      "invokeGlobalAction6"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction7"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderMedialRotationArom
+                                  .files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction7"] != null &&
+                    typeof $steps["invokeGlobalAction7"] === "object" &&
+                    typeof $steps["invokeGlobalAction7"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction7"] = await $steps[
+                      "invokeGlobalAction7"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction8"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderMedialRotationProm
+                                  .files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction8"] != null &&
+                    typeof $steps["invokeGlobalAction8"] === "object" &&
+                    typeof $steps["invokeGlobalAction8"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction8"] = await $steps[
+                      "invokeGlobalAction8"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction9"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderExtensionArom.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction9"] != null &&
+                    typeof $steps["invokeGlobalAction9"] === "object" &&
+                    typeof $steps["invokeGlobalAction9"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction9"] = await $steps[
+                      "invokeGlobalAction9"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction10"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderExtensionProm.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction10"] != null &&
+                    typeof $steps["invokeGlobalAction10"] === "object" &&
+                    typeof $steps["invokeGlobalAction10"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction10"] = await $steps[
+                      "invokeGlobalAction10"
+                    ];
+                  }
+
+                  $steps["processResult"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.result = {
+                              pain: $state.askPain.value,
+                              muscle_strength: $state.askMuscleStrength.value,
+                              images: {
+                                ShoulderFlexionAROM:
+                                  $ctx.store.state.bucket_base_url +
+                                  $state.shoulderFlexionArom.files[0].uid +
+                                  "." +
+                                  $state.shoulderFlexionArom.files[0].name.split(
+                                    "."
+                                  )[1],
+                                ShoulderFlexionPROM:
+                                  $ctx.store.state.bucket_base_url +
+                                  $state.shoulderFlexionProm.files[0].uid +
+                                  "." +
+                                  $state.shoulderFlexionProm.files[0].name.split(
+                                    "."
+                                  )[1],
+                                ShoulderAbductionAROM:
+                                  $ctx.store.state.bucket_base_url +
+                                  $state.shoulderAbductionArom.files[0].uid +
+                                  "." +
+                                  $state.shoulderAbductionArom.files[0].name.split(
+                                    "."
+                                  )[1],
+                                ShoulderAbductionPROM:
+                                  $ctx.store.state.bucket_base_url +
+                                  $state.shoulderAbductionProm.files[0].uid +
+                                  "." +
+                                  $state.shoulderAbductionProm.files[0].name.split(
+                                    "."
+                                  )[1],
+                                ShoulderLateralRotationAROM:
+                                  $ctx.store.state.bucket_base_url +
+                                  $state.shoulderLateralRotationArom.files[0]
+                                    .uid +
+                                  "." +
+                                  $state.shoulderLateralRotationArom.files[0].name.split(
+                                    "."
+                                  )[1],
+                                ShoulderLateralRotationPROM:
+                                  $ctx.store.state.bucket_base_url +
+                                  $state.shoulderLateralRotationProm.files[0]
+                                    .uid +
+                                  "." +
+                                  $state.shoulderLateralRotationProm.files[0].name.split(
+                                    "."
+                                  )[1],
+                                ShoulderMedialRotationAROM:
+                                  $ctx.store.state.bucket_base_url +
+                                  $state.shoulderMedialRotationArom.files[0]
+                                    .uid +
+                                  "." +
+                                  $state.shoulderMedialRotationArom.files[0].name.split(
+                                    "."
+                                  )[1],
+                                ShoulderMedialRotationPROM:
+                                  $ctx.store.state.bucket_base_url +
+                                  $state.shoulderMedialRotationProm.files[0]
+                                    .uid +
+                                  "." +
+                                  $state.shoulderMedialRotationProm.files[0].name.split(
+                                    "."
+                                  )[1],
+                                ShoulderExtensionAROM:
+                                  $ctx.store.state.bucket_base_url +
+                                  $state.shoulderExtensionArom.files[0].uid +
+                                  "." +
+                                  $state.shoulderExtensionArom.files[0].name.split(
+                                    "."
+                                  )[1],
+                                ShoulderExtensionPROM:
+                                  $ctx.store.state.bucket_base_url +
+                                  $state.shoulderExtensionProm.files[0].uid +
+                                  "." +
+                                  $state.shoulderExtensionProm.files[0].name.split(
+                                    "."
+                                  )[1]
+                              },
+                              get_dressed: $state.askAdLofGettingDressed.value,
+                              comb: $state.askAdLofCombing.value,
+                              turn_down_collar:
+                                $state.askAdLofTurnDownTheCollar.value,
+                              wear_apron: $state.askAdLofWearingAnApron.value,
+                              use_tissue: $state.askAdLofUsingToiletPaper.value,
+                              wipe_armpit:
+                                $state.askAdLofRubbingTheOppositeArmpit.value,
+                              fasten_belt: $state.askAdLofFasteningTheBelt.value
+                            });
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["processResult"] != null &&
+                    typeof $steps["processResult"] === "object" &&
+                    typeof $steps["processResult"].then === "function"
+                  ) {
+                    $steps["processResult"] = await $steps["processResult"];
+                  }
+
+                  $steps["invokeGlobalAction11"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.questionaireId;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.result;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions[
+                          "GlobalContext.submitShoulderFollowUpRecord"
+                        ]?.apply(null, [...actionArgs.args]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction11"] != null &&
+                    typeof $steps["invokeGlobalAction11"] === "object" &&
+                    typeof $steps["invokeGlobalAction11"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction11"] = await $steps[
+                      "invokeGlobalAction11"
+                    ];
+                  }
+
+                  $steps["showDialog"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.showDialog = true);
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["showDialog"] != null &&
+                    typeof $steps["showDialog"] === "object" &&
+                    typeof $steps["showDialog"].then === "function"
+                  ) {
+                    $steps["showDialog"] = await $steps["showDialog"];
                   }
                 }}
                 startIcon={
@@ -2378,10 +3248,126 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.text__zqpbp
                   )}
                 >
-                  {"\u63d0\u4ea4"}
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $state.buttonText;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u63d0\u4ea4";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </div>
               </Button>
             </AntdTooltip>
+            <Dialog
+              data-plasmic-name={"dialog"}
+              data-plasmic-override={overrides.dialog}
+              body={
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__xnuxM)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__iP7Al
+                    )}
+                  >
+                    {"\u4e0a\u4f20\u6210\u529f\uff01"}
+                  </div>
+                  <AntdButton
+                    className={classNames("__wab_instance", sty.button__wry5U)}
+                    onClick={async () => {
+                      const $steps = {};
+
+                      $steps["goback"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                (() => {
+                                  try {
+                                    return $ctx.query.questionaireId;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })(),
+                                (() => {
+                                  try {
+                                    return $ctx.query.env;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions[
+                              "GlobalContext.goback"
+                            ]?.apply(null, [...actionArgs.args]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goback"] != null &&
+                        typeof $steps["goback"] === "object" &&
+                        typeof $steps["goback"].then === "function"
+                      ) {
+                        $steps["goback"] = await $steps["goback"];
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__h9YDd
+                      )}
+                    >
+                      {"\u786e\u5b9a"}
+                    </div>
+                  </AntdButton>
+                </Stack__>
+              }
+              className={classNames("__wab_instance", sty.dialog)}
+              noTrigger={true}
+              onOpenChange={generateStateOnChangeProp($state, [
+                "dialog",
+                "open"
+              ])}
+              open={generateStateValueProp($state, ["dialog", "open"])}
+              title={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__db9ZC
+                  )}
+                >
+                  {"\u63d0\u793a"}
+                </div>
+              }
+            />
           </div>
         </div>
       </div>
@@ -2412,8 +3398,8 @@ const PlasmicDescendants = {
     "askAdLofRubbingTheOppositeArmpit",
     "askAdLofFasteningTheBelt",
     "tooltip",
-    "button",
-    "svg"
+    "svg",
+    "dialog"
   ],
   askPain: ["askPain"],
   shoulderFlexionArom: ["shoulderFlexionArom"],
@@ -2434,9 +3420,9 @@ const PlasmicDescendants = {
   askAdLofUsingToiletPaper: ["askAdLofUsingToiletPaper"],
   askAdLofRubbingTheOppositeArmpit: ["askAdLofRubbingTheOppositeArmpit"],
   askAdLofFasteningTheBelt: ["askAdLofFasteningTheBelt"],
-  tooltip: ["tooltip", "button", "svg"],
-  button: ["button", "svg"],
-  svg: ["svg"]
+  tooltip: ["tooltip", "svg"],
+  svg: ["svg"],
+  dialog: ["dialog"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2463,24 +3449,24 @@ type NodeDefaultElementType = {
   askAdLofRubbingTheOppositeArmpit: typeof AntdRadioGroup;
   askAdLofFasteningTheBelt: typeof AntdRadioGroup;
   tooltip: typeof AntdTooltip;
-  button: typeof Button;
   svg: "svg";
+  dialog: typeof Dialog;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
 type NodeOverridesType<T extends NodeNameType> = Pick<
-  PlasmicHomepage__OverridesType,
+  PlasmicMobileShoulderFollowup__OverridesType,
   DescendantsType<T>
 >;
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
-    variants?: PlasmicHomepage__VariantsArgs;
-    args?: PlasmicHomepage__ArgsType;
+    variants?: PlasmicMobileShoulderFollowup__VariantsArgs;
+    args?: PlasmicMobileShoulderFollowup__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicHomepage__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } & Omit<PlasmicMobileShoulderFollowup__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     /* Specify args directly as props*/ Omit<
-      PlasmicHomepage__ArgsType,
+      PlasmicMobileShoulderFollowup__ArgsType,
       ReservedPropsType
     > &
     /* Specify overrides for each element directly as props*/ Omit<
@@ -2502,12 +3488,12 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         deriveRenderOpts(props, {
           name: nodeName,
           descendantNames: PlasmicDescendants[nodeName],
-          internalArgPropNames: PlasmicHomepage__ArgProps,
-          internalVariantPropNames: PlasmicHomepage__VariantProps
+          internalArgPropNames: PlasmicMobileShoulderFollowup__ArgProps,
+          internalVariantPropNames: PlasmicMobileShoulderFollowup__VariantProps
         }),
       [props, nodeName]
     );
-    return PlasmicHomepage__RenderFunc({
+    return PlasmicMobileShoulderFollowup__RenderFunc({
       variants,
       args,
       overrides,
@@ -2515,15 +3501,15 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
     });
   };
   if (nodeName === "root") {
-    func.displayName = "PlasmicHomepage";
+    func.displayName = "PlasmicMobileShoulderFollowup";
   } else {
-    func.displayName = `PlasmicHomepage.${nodeName}`;
+    func.displayName = `PlasmicMobileShoulderFollowup.${nodeName}`;
   }
   return func;
 }
 
-export const PlasmicHomepage = Object.assign(
-  // Top-level PlasmicHomepage renders the root element
+export const PlasmicMobileShoulderFollowup = Object.assign(
+  // Top-level PlasmicMobileShoulderFollowup renders the root element
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
@@ -2553,12 +3539,12 @@ export const PlasmicHomepage = Object.assign(
     ),
     askAdLofFasteningTheBelt: makeNodeComponent("askAdLofFasteningTheBelt"),
     tooltip: makeNodeComponent("tooltip"),
-    button: makeNodeComponent("button"),
     svg: makeNodeComponent("svg"),
+    dialog: makeNodeComponent("dialog"),
 
-    // Metadata about props expected for PlasmicHomepage
-    internalVariantProps: PlasmicHomepage__VariantProps,
-    internalArgProps: PlasmicHomepage__ArgProps,
+    // Metadata about props expected for PlasmicMobileShoulderFollowup
+    internalVariantProps: PlasmicMobileShoulderFollowup__VariantProps,
+    internalArgProps: PlasmicMobileShoulderFollowup__ArgProps,
 
     // Page metadata
     pageMetadata: {
@@ -2570,5 +3556,5 @@ export const PlasmicHomepage = Object.assign(
   }
 );
 
-export default PlasmicHomepage;
+export default PlasmicMobileShoulderFollowup;
 /* prettier-ignore-end */

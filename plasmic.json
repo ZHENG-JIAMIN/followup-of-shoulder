@@ -521,20 +521,6 @@
       "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/plasmic.module.css",
       "components": [
         {
-          "id": "gS29OBnbSErN",
-          "name": "Homepage",
-          "type": "managed",
-          "projectId": "bQFzjFXbkpSsuDuBQNZ8MF",
-          "renderModuleFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicHomepage.tsx",
-          "importSpec": {
-            "modulePath": "../pages/index.tsx"
-          },
-          "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/"
-        },
-        {
           "id": "kSMvAbxe7o9l",
           "name": "Select",
           "type": "managed",
@@ -669,6 +655,34 @@
           "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicDialog.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "gS29OBnbSErN",
+          "name": "MobileShoulderFollowup",
+          "type": "managed",
+          "projectId": "bQFzjFXbkpSsuDuBQNZ8MF",
+          "renderModuleFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicMobileShoulderFollowup.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicMobileShoulderFollowup.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/"
+        },
+        {
+          "id": "1cUBbxNaO4UO",
+          "name": "WebsiteShoulderFollowup",
+          "type": "managed",
+          "projectId": "bQFzjFXbkpSsuDuBQNZ8MF",
+          "renderModuleFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicWebsiteShoulderFollowup.tsx",
+          "importSpec": {
+            "modulePath": "../pages/new-page-2.tsx"
+          },
+          "cssFilePath": "plasmic/follow_up_page_of_shoulder_zjm/PlasmicWebsiteShoulderFollowup.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page-2"
         }
       ],
       "icons": [
@@ -728,6 +742,101 @@
           "id": "p2vt7gW5oR-c",
           "name": "图片1点击上传图片.png",
           "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/图片1点击上传图片png.png"
+        },
+        {
+          "id": "4JXWTODK2LXt",
+          "name": "4.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_4Jpg.jpg"
+        },
+        {
+          "id": "nWTWDexD6I3-",
+          "name": "11.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_11Jpg.jpg"
+        },
+        {
+          "id": "4bHreO5H5eIZ",
+          "name": "2.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_2Jpg.jpg"
+        },
+        {
+          "id": "mZhlL2TRx6wS",
+          "name": "10.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_10Jpg.jpg"
+        },
+        {
+          "id": "dK1gKPUSjYrt",
+          "name": "1.jpg 2",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_1Jpg2.jpg"
+        },
+        {
+          "id": "X3TL1sKQhb8K",
+          "name": "9.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_9Jpg.jpg"
+        },
+        {
+          "id": "QfRG_oKGU5lL",
+          "name": "5.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_5Jpg.jpg"
+        },
+        {
+          "id": "EiCKCvjQN2xH",
+          "name": "6.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_6Jpg.jpg"
+        },
+        {
+          "id": "r6ycmAtTASIE",
+          "name": "3.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_3Jpg.jpg"
+        },
+        {
+          "id": "NHghdn_mZ5Ah",
+          "name": "8.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_8Jpg.jpg"
+        },
+        {
+          "id": "aN-PwRHqfVyL",
+          "name": "12.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_12Jpg.jpg"
+        },
+        {
+          "id": "jnfZ90eRvP2v",
+          "name": "7.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_7Jpg.jpg"
+        },
+        {
+          "id": "5WXhoYinFkZC",
+          "name": "15-5.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_155Jpg.jpg"
+        },
+        {
+          "id": "xrQ6zxps8QJG",
+          "name": "14.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_14Jpg.jpg"
+        },
+        {
+          "id": "aBYexceH05N2",
+          "name": "13.jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_13Jpg.jpg"
+        },
+        {
+          "id": "ScLfgnWe0BZc",
+          "name": "14-2(1).jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_1421Jpg.jpg"
+        },
+        {
+          "id": "KhkU_olzTz0J",
+          "name": "13-2(1).jpg",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/_1321Jpg.jpg"
+        },
+        {
+          "id": "IDWGJqAthx8h",
+          "name": "疼痛.png 2",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/疼痛png2.png"
+        },
+        {
+          "id": "PHTJJQA_TCc2",
+          "name": "疼痛2.png",
+          "filePath": "../public/plasmic/follow_up_page_of_shoulder_zjm/images/疼痛2Png.png"
         }
       ],
       "indirect": false,
@@ -748,6 +857,22 @@
         }
       ],
       "customFunctions": []
+    },
+    {
+      "projectId": "k6BnBuAUepzRX8Qs2WvkKs",
+      "projectApiToken": "1IHtphNKS6GGn3MNsez8NOlUZOc7diWRFES7RpYSY0TaI1LjT7i4vaz9QTjgncxXRUsqlyHtKBMa8Fe6Q",
+      "projectName": "axios",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/axios/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [],
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

@@ -61,12 +61,16 @@ import {
 
 import Upload from "../../Upload"; // plasmic-import: aJNGyiE-SJ0S/component
 import { UploadWrapper } from "@plasmicpkgs/antd5/skinny/registerUpload";
+import Button from "../../Button"; // plasmic-import: a1WfQs9Vt8cw/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: bQFzjFXbkpSsuDuBQNZ8MF/projectcss
 import sty from "./PlasmicNewPage.module.css"; // plasmic-import: RE0cdu_4bEY_/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: 9NLJZlnVYXvs/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: jDpuVvrlPf7y/icon
 
 createPlasmicElementProxy;
 
@@ -81,11 +85,10 @@ export const PlasmicNewPage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNewPage__OverridesType = {
   root?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
   upload?: Flex__<typeof Upload>;
   主要?: Flex__<typeof UploadWrapper>;
   img?: Flex__<typeof PlasmicImg__>;
-  text?: Flex__<"div">;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultNewPageProps {}
@@ -118,6 +121,8 @@ function PlasmicNewPage__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const $globalActions = useGlobalActions?.();
 
   const currentUser = useCurrentUser?.() || {};
 
@@ -165,11 +170,7 @@ function PlasmicNewPage__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
+          <div className={classNames(projectcss.all, sty.freeBox__iUEay)}>
             <Upload
               data-plasmic-name={"upload"}
               data-plasmic-override={overrides.upload}
@@ -212,12 +213,10 @@ function PlasmicNewPage__RenderFunc(props: {
             />
 
             <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text
+                sty.text__szSo
               )}
             >
               <React.Fragment>
@@ -237,6 +236,58 @@ function PlasmicNewPage__RenderFunc(props: {
               </React.Fragment>
             </div>
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__rAsyh)}>
+            <Button
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames("__wab_instance", sty.button)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["invokeGlobalAction"] = true
+                  ? (() => {
+                      const actionArgs = { args: ["1111"] };
+                      return $globalActions["GlobalContext.setToken"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] = await $steps[
+                    "invokeGlobalAction"
+                  ];
+                }
+              }}
+            />
+          </div>
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__is6Rs
+            )}
+          >
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $ctx.store.state.token;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -244,23 +295,21 @@ function PlasmicNewPage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "upload", "\u4e3b\u8981", "img", "text"],
-  freeBox: ["freeBox", "upload", "\u4e3b\u8981", "img", "text"],
+  root: ["root", "upload", "\u4e3b\u8981", "img", "button"],
   upload: ["upload", "\u4e3b\u8981", "img"],
   主要: ["\u4e3b\u8981", "img"],
   img: ["img"],
-  text: ["text"]
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
   upload: typeof Upload;
   主要: typeof UploadWrapper;
   img: typeof PlasmicImg__;
-  text: "div";
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -323,11 +372,10 @@ export const PlasmicNewPage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
     upload: makeNodeComponent("upload"),
     主要: makeNodeComponent("\u4e3b\u8981"),
     img: makeNodeComponent("img"),
-    text: makeNodeComponent("text"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicNewPage
     internalVariantProps: PlasmicNewPage__VariantProps,
