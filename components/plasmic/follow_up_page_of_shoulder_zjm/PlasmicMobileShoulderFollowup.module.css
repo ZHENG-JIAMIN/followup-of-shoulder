@@ -55,6 +55,16 @@
   font-size: 30px;
   min-width: 0;
 }
+.text___9Mo1 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: #000000;
+  text-align: left;
+  font-size: 30px;
+  min-width: 0;
+}
 .askPain:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
@@ -67,16 +77,6 @@
 }
 .text__hv8KB {
   font-size: 30px;
-}
-.text___9Mo1 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  color: #000000;
-  text-align: left;
-  font-size: 30px;
-  min-width: 0;
 }
 .freeBox__eedQx {
   display: flex;
@@ -1336,10 +1336,11 @@
 .text__tEpbp {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__tEpbp {
@@ -1354,10 +1355,11 @@
 .text__e36C {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .radio__bHywi:global(.__wab_instance) {
   max-width: 100%;
@@ -1367,10 +1369,11 @@
 .text__li5Uz {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .freeBox__yHiN0 {
   display: flex;
@@ -1382,7 +1385,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 .text__nrdoC {
   position: relative;
@@ -1398,7 +1401,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  width: 701px;
+  width: 722px;
   height: auto;
   max-width: 100%;
   object-fit: cover;
@@ -1412,10 +1415,11 @@
 .text___9MRrD {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text___9MRrD {
@@ -1430,10 +1434,11 @@
 .text__dnPd1 {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .radio__awvBu:global(.__wab_instance) {
   max-width: 100%;
@@ -1443,10 +1448,11 @@
 .text__qv3Cs {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .freeBox__dG3Xt {
   display: flex;
@@ -1458,7 +1464,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 .text__yZyC3 {
   position: relative;
@@ -1488,10 +1494,11 @@
 .text__dxfJh {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__dxfJh {
@@ -1506,10 +1513,11 @@
 .text__dp6Y4 {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .radio___3O5Ff:global(.__wab_instance) {
   max-width: 100%;
@@ -1519,10 +1527,11 @@
 .text__bwfB3 {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .freeBox___7Oan4 {
   display: flex;
@@ -1534,7 +1543,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 .text__dkMj2 {
   position: relative;
@@ -1564,10 +1573,11 @@
 .text__b5Hlo {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__b5Hlo {
@@ -1582,10 +1592,11 @@
 .text__qHyAn {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .radio__alu2U:global(.__wab_instance) {
   max-width: 100%;
@@ -1595,10 +1606,11 @@
 .text__q1WPl {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .freeBox___9LfeL {
   display: flex;
@@ -1610,7 +1622,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 .text__iTtvP {
   position: relative;
@@ -1640,10 +1652,11 @@
 .text__u3KoR {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__u3KoR {
@@ -1658,10 +1671,11 @@
 .text__hTh8R {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .radio__pm4T5:global(.__wab_instance) {
   max-width: 100%;
@@ -1671,10 +1685,11 @@
 .text__mAqby {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .freeBox___2OPUy {
   display: flex;
@@ -1686,7 +1701,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 .text__tanQj {
   position: relative;
@@ -1716,10 +1731,11 @@
 .text__llZt9 {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__llZt9 {
@@ -1734,10 +1750,11 @@
 .text___1TxPc {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .radio__pa7Ri:global(.__wab_instance) {
   max-width: 100%;
@@ -1762,7 +1779,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 .text__vmshr {
   position: relative;
@@ -1792,10 +1809,11 @@
 .text__cOlTh {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__cOlTh {
@@ -1810,10 +1828,11 @@
 .text___3Tbmo {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .radio___3BOr:global(.__wab_instance) {
   max-width: 100%;
@@ -1823,10 +1842,11 @@
 .text__yq2Fr {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   font-size: 18px;
   min-width: 0;
+  min-height: 0;
 }
 .text__lVylM {
   position: relative;
@@ -1841,7 +1861,7 @@
   object-fit: cover;
   position: relative;
 }
-.button:global(.__wab_instance) {
+.button__nsdFk:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   width: 100%;
@@ -1861,4 +1881,84 @@
   object-fit: cover;
   width: auto;
   height: 1em;
+}
+.dialog:global(.__wab_instance):global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.text__lilXa {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.svg__cwiSb {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__dh9U {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.text__db9ZC {
+  font-size: 30px;
+}
+.freeBox__xnuxM {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0px;
+}
+.freeBox__xnuxM > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  margin-top: calc(0px - 8px);
+  height: calc(100% + 8px);
+}
+.freeBox__xnuxM > :global(.__wab_flex-container) > *,
+.freeBox__xnuxM > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__xnuxM > :global(.__wab_flex-container) > picture > img,
+.freeBox__xnuxM
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 8px;
+}
+.text__iP7Al {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 24px;
+  margin-top: calc(24px + 8px) !important;
+  min-width: 0;
+}
+.button__wry5U:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  margin-top: calc(29px + 8px) !important;
+  width: 88px;
+  height: 43px;
+  background: var(--token-DbGdjBpQ6R_X);
+  flex-shrink: 0;
+}
+.text__h9YDd {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 20px;
+  min-width: 0;
 }

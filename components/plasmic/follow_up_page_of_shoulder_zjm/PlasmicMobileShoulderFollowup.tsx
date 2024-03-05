@@ -67,6 +67,8 @@ import { AntdRadioGroup } from "@plasmicpkgs/antd5/skinny/registerRadio";
 import { AntdRadio } from "@plasmicpkgs/antd5/skinny/registerRadio";
 import { AntdTooltip } from "@plasmicpkgs/antd5/skinny/registerTooltip";
 import Button from "../../Button"; // plasmic-import: a1WfQs9Vt8cw/component
+import Dialog from "../../Dialog"; // plasmic-import: wTSBbjdFii9t/component
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 
 import { useScreenVariants as useScreenVariantspn97G4HNqafa } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Pn97G4hNqafa/globalVariant
 
@@ -113,8 +115,8 @@ export type PlasmicMobileShoulderFollowup__OverridesType = {
   askAdLofRubbingTheOppositeArmpit?: Flex__<typeof AntdRadioGroup>;
   askAdLofFasteningTheBelt?: Flex__<typeof AntdRadioGroup>;
   tooltip?: Flex__<typeof AntdTooltip>;
-  button?: Flex__<typeof Button>;
   svg?: Flex__<"svg">;
+  dialog?: Flex__<typeof Dialog>;
 };
 
 export interface DefaultMobileShoulderFollowupProps {}
@@ -292,6 +294,37 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+      },
+      {
+        path: "buttonText",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "\u63d0\u4ea4"
+      },
+      {
+        path: "dialog.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.showDialog;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "showDialog",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -354,60 +387,6 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                 "\u8bf7\u5982\u5b9e\u586b\u5199\uff0c\u5eb7\u590d\u5e08\u4f1a\u53ca\u65f6\u6839\u636e\u60a8\u7684\u60c5\u51b5\u5206\u6790\u5f53\u524d\u56de\u590d\u8fdb\u5ea6\u662f\u5426\u6b63\u5e38\uff0c\u5e76\u7ed9\u60a8\u53d1\u9001\u5206\u6790\u62a5\u544a\u3002"
               }
             </div>
-            <Select
-              data-plasmic-name={"askPain"}
-              data-plasmic-override={overrides.askPain}
-              className={classNames("__wab_instance", sty.askPain)}
-              name={
-                "\u6700\u8fd1\u4e00\u5468\u75bc\u75db\u5bf9\u6d3b\u52a8\u7684\u5f71\u54cd"
-              }
-              onChange={(...eventArgs) => {
-                generateStateOnChangeProp($state, ["askPain", "value"])(
-                  eventArgs[0]
-                );
-              }}
-              options={(() => {
-                const __composite = [
-                  { value: null, label: null },
-                  { value: null, label: null },
-                  { label: null, value: null },
-                  { value: null, label: null },
-                  { value: null, label: null },
-                  { value: null, label: null }
-                ];
-                __composite["0"]["value"] = "1";
-                __composite["0"]["label"] = "\u65e0\u75db";
-                __composite["1"]["value"] = "2";
-                __composite["1"]["label"] =
-                  "\u6709\u65f6\u7565\u5fae\u75bc\u75db";
-                __composite["2"]["label"] =
-                  "\u8f7b\u5ea6\u75bc\u75db\uff0c\u666e\u901a\u6d3b\u52a8\u65e0\u969c\u788d";
-                __composite["2"]["value"] = "3";
-                __composite["3"]["value"] = "4";
-                __composite["3"]["label"] =
-                  "\u4e2d\u5ea6\u75bc\u75db\uff0c\u80fd\u591f\u5fcd\u53d7";
-                __composite["4"]["value"] = "5";
-                __composite["4"]["label"] =
-                  "\u91cd\u5ea6\u75bc\u75db\uff0c\u6d3b\u52a8\u4e25\u91cd\u53d7\u9650";
-                __composite["5"]["value"] = "6";
-                __composite["5"]["label"] =
-                  "\u56e0\u75bc\u75db\u800c\u5b8c\u5168\u5e76\u4e0d\u80fd\u6d3b\u52a8";
-                return __composite;
-              })()}
-              placeholder={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hv8KB
-                  )}
-                >
-                  {"\u8bf7\u9009\u62e9\u60a8\u7684\u75bc\u75db\u60c5\u51b5"}
-                </div>
-              }
-              value={generateStateValueProp($state, ["askPain", "value"])}
-            />
-
             <div
               className={classNames(
                 projectcss.all,
@@ -432,6 +411,60 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                 </React.Fragment>
               </React.Fragment>
             </div>
+            <Select
+              data-plasmic-name={"askPain"}
+              data-plasmic-override={overrides.askPain}
+              className={classNames("__wab_instance", sty.askPain)}
+              name={
+                "\u6700\u8fd1\u4e00\u5468\u75bc\u75db\u5bf9\u6d3b\u52a8\u7684\u5f71\u54cd"
+              }
+              onChange={(...eventArgs) => {
+                generateStateOnChangeProp($state, ["askPain", "value"])(
+                  eventArgs[0]
+                );
+              }}
+              options={(() => {
+                const __composite = [
+                  { value: null, label: null },
+                  { value: null, label: null },
+                  { label: null, value: null },
+                  { value: null, label: null },
+                  { value: null, label: null },
+                  { value: null, label: null }
+                ];
+                __composite["0"]["value"] = "30";
+                __composite["0"]["label"] = "\u65e0\u75db";
+                __composite["1"]["value"] = "25";
+                __composite["1"]["label"] =
+                  "\u6709\u65f6\u7565\u5fae\u75bc\u75db";
+                __composite["2"]["label"] =
+                  "\u8f7b\u5ea6\u75bc\u75db\uff0c\u666e\u901a\u6d3b\u52a8\u65e0\u969c\u788d";
+                __composite["2"]["value"] = "20";
+                __composite["3"]["value"] = "10";
+                __composite["3"]["label"] =
+                  "\u4e2d\u5ea6\u75bc\u75db\uff0c\u80fd\u591f\u5fcd\u53d7";
+                __composite["4"]["value"] = "5";
+                __composite["4"]["label"] =
+                  "\u91cd\u5ea6\u75bc\u75db\uff0c\u6d3b\u52a8\u4e25\u91cd\u53d7\u9650";
+                __composite["5"]["value"] = "0";
+                __composite["5"]["label"] =
+                  "\u56e0\u75bc\u75db\u800c\u5b8c\u5168\u5e76\u4e0d\u80fd\u6d3b\u52a8";
+                return __composite;
+              })()}
+              placeholder={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hv8KB
+                  )}
+                >
+                  {"\u8bf7\u9009\u62e9\u60a8\u7684\u75bc\u75db\u60c5\u51b5"}
+                </div>
+              }
+              value={generateStateValueProp($state, ["askPain", "value"])}
+            />
+
             <div className={classNames(projectcss.all, sty.freeBox__eedQx)}>
               <PlasmicImg__
                 alt={""}
@@ -1433,22 +1466,22 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                   { value: null, label: null },
                   { value: null, label: null }
                 ];
-                __composite["0"]["value"] = "1";
+                __composite["0"]["value"] = "5";
                 __composite["0"]["label"] =
                   "5\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u963b\u529b\uff0c\u5e76\u80fd\u7ef4\u6301\u5bf9\u6297\u59ff\u52bf";
-                __composite["1"]["value"] = "2";
+                __composite["1"]["value"] = "4";
                 __composite["1"]["label"] =
                   "4\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u963b\u529b\uff0c\u4f46\u4e0d\u80fd\u7ef4\u6301\u59ff\u52bf";
                 __composite["2"]["label"] =
                   "3\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u91cd\u529b\uff0c\u81ea\u4e3b\u5c06\u80a9\u5173\u8282\u5411\u5916\u6253\u5f00";
                 __composite["2"]["value"] = "3";
-                __composite["3"]["value"] = "4";
+                __composite["3"]["value"] = "2";
                 __composite["3"]["label"] =
                   "2\u7ea7\uff1a\u53ef\u4ee5\u5728\u5e73\u8eba\u4f4d\u7f6e\u4e0b\u5411\u5916\u4f38\u5c55\u80a9\u5173\u8282";
-                __composite["4"]["value"] = "5";
+                __composite["4"]["value"] = "1";
                 __composite["4"]["label"] =
                   "1\u7ea7\uff1a\u65e0\u6cd5\u5728\u5e73\u8eba\u60c5\u51b5\u5411\u5916\u6253\u5f00\u80a9\u5173\u8282\uff0c\u4f46\u662f\u80fd\u6478\u5230\u808c\u8089\u5728\u6536\u7d27";
-                __composite["5"]["value"] = "6";
+                __composite["5"]["value"] = "0";
                 __composite["5"]["label"] =
                   "0\u7ea7\uff1a\u65e0\u6cd5\u5728\u5e73\u8eba\u60c5\u51b5\u5411\u5916\u6253\u5f00\u80a9\u5173\u8282\uff0c\u4e5f\u4e0d\u80fd\u6478\u5230\u808c\u8089\u5728\u6536\u7d27";
                 return __composite;
@@ -2326,22 +2359,31 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
               data-plasmic-name={"tooltip"}
               data-plasmic-override={overrides.tooltip}
               className={classNames("__wab_instance", sty.tooltip)}
-              titleText={"Tooltip contents"}
+              titleText={``}
             >
               <Button
-                data-plasmic-name={"button"}
-                data-plasmic-override={overrides.button}
-                className={classNames("__wab_instance", sty.button)}
+                className={classNames("__wab_instance", sty.button__nsdFk)}
                 color={"green"}
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["runCode"] = false
+                  $steps["check"] = true
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
                             return ($state.showTip = !(
-                              $state.shoulderFlexionArom.files.length &&
+                              $state.shoulderFlexionArom.files?.length &&
+                              $state.shoulderFlexionProm.files?.length &&
+                              $state.shoulderAbductionArom.files?.length &&
+                              $state.shoulderAbductionProm.files?.length &&
+                              $state.shoulderLateralRotationArom.files
+                                ?.length &&
+                              $state.shoulderLateralRotationProm.files
+                                ?.length &&
+                              $state.shoulderMedialRotationArom.files?.length &&
+                              $state.shoulderMedialRotationProm.files?.length &&
+                              $state.shoulderExtensionArom.files?.length &&
+                              $state.shoulderExtensionProm.files?.length &&
                               $state.askAdLofCombing.value &&
                               $state.askPain.value &&
                               $state.askAdLofFasteningTheBelt.value &&
@@ -2360,14 +2402,34 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
+                    $steps["check"] != null &&
+                    typeof $steps["check"] === "object" &&
+                    typeof $steps["check"].then === "function"
                   ) {
-                    $steps["runCode"] = await $steps["runCode"];
+                    $steps["check"] = await $steps["check"];
                   }
 
-                  $steps["invokeGlobalAction"] = true
+                  $steps["waiting"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.buttonText = "上传中...");
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["waiting"] != null &&
+                    typeof $steps["waiting"] === "object" &&
+                    typeof $steps["waiting"].then === "function"
+                  ) {
+                    $steps["waiting"] = await $steps["waiting"];
+                  }
+
+                  $steps["invokeGlobalAction"] = !$state.showTip
                     ? (() => {
                         const actionArgs = {
                           args: [
@@ -2396,6 +2458,19 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                                 }
                                 throw e;
                               }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
                             })()
                           ]
                         };
@@ -2415,7 +2490,560 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["runCode2"] = true
+                  $steps["invokeGlobalAction2"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderFlexionProm.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction2"] != null &&
+                    typeof $steps["invokeGlobalAction2"] === "object" &&
+                    typeof $steps["invokeGlobalAction2"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction2"] = await $steps[
+                      "invokeGlobalAction2"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction3"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderAbductionArom.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction3"] != null &&
+                    typeof $steps["invokeGlobalAction3"] === "object" &&
+                    typeof $steps["invokeGlobalAction3"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction3"] = await $steps[
+                      "invokeGlobalAction3"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction4"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderAbductionProm.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction4"] != null &&
+                    typeof $steps["invokeGlobalAction4"] === "object" &&
+                    typeof $steps["invokeGlobalAction4"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction4"] = await $steps[
+                      "invokeGlobalAction4"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction5"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderLateralRotationArom
+                                  .files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction5"] != null &&
+                    typeof $steps["invokeGlobalAction5"] === "object" &&
+                    typeof $steps["invokeGlobalAction5"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction5"] = await $steps[
+                      "invokeGlobalAction5"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction6"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderLateralRotationProm
+                                  .files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction6"] != null &&
+                    typeof $steps["invokeGlobalAction6"] === "object" &&
+                    typeof $steps["invokeGlobalAction6"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction6"] = await $steps[
+                      "invokeGlobalAction6"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction7"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderMedialRotationArom
+                                  .files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction7"] != null &&
+                    typeof $steps["invokeGlobalAction7"] === "object" &&
+                    typeof $steps["invokeGlobalAction7"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction7"] = await $steps[
+                      "invokeGlobalAction7"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction8"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderMedialRotationProm
+                                  .files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction8"] != null &&
+                    typeof $steps["invokeGlobalAction8"] === "object" &&
+                    typeof $steps["invokeGlobalAction8"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction8"] = await $steps[
+                      "invokeGlobalAction8"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction9"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderExtensionArom.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction9"] != null &&
+                    typeof $steps["invokeGlobalAction9"] === "object" &&
+                    typeof $steps["invokeGlobalAction9"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction9"] = await $steps[
+                      "invokeGlobalAction9"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction10"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.token;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.shoulderExtensionProm.files[0];
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["GlobalContext.upload"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction10"] != null &&
+                    typeof $steps["invokeGlobalAction10"] === "object" &&
+                    typeof $steps["invokeGlobalAction10"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction10"] = await $steps[
+                      "invokeGlobalAction10"
+                    ];
+                  }
+
+                  $steps["processResult"] = !$state.showTip
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
@@ -2516,11 +3144,91 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["runCode2"] != null &&
-                    typeof $steps["runCode2"] === "object" &&
-                    typeof $steps["runCode2"].then === "function"
+                    $steps["processResult"] != null &&
+                    typeof $steps["processResult"] === "object" &&
+                    typeof $steps["processResult"].then === "function"
                   ) {
-                    $steps["runCode2"] = await $steps["runCode2"];
+                    $steps["processResult"] = await $steps["processResult"];
+                  }
+
+                  $steps["invokeGlobalAction11"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            (() => {
+                              try {
+                                return $ctx.query.questionaireId;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $state.result;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            (() => {
+                              try {
+                                return $ctx.query.env;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions[
+                          "GlobalContext.submitShoulderFollowUpRecord"
+                        ]?.apply(null, [...actionArgs.args]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction11"] != null &&
+                    typeof $steps["invokeGlobalAction11"] === "object" &&
+                    typeof $steps["invokeGlobalAction11"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction11"] = await $steps[
+                      "invokeGlobalAction11"
+                    ];
+                  }
+
+                  $steps["showDialog"] = !$state.showTip
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.showDialog = true);
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["showDialog"] != null &&
+                    typeof $steps["showDialog"] === "object" &&
+                    typeof $steps["showDialog"].then === "function"
+                  ) {
+                    $steps["showDialog"] = await $steps["showDialog"];
                   }
                 }}
                 startIcon={
@@ -2540,10 +3248,126 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                     sty.text__zqpbp
                   )}
                 >
-                  {"\u63d0\u4ea4"}
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $state.buttonText;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u63d0\u4ea4";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </div>
               </Button>
             </AntdTooltip>
+            <Dialog
+              data-plasmic-name={"dialog"}
+              data-plasmic-override={overrides.dialog}
+              body={
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__xnuxM)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__iP7Al
+                    )}
+                  >
+                    {"\u4e0a\u4f20\u6210\u529f\uff01"}
+                  </div>
+                  <AntdButton
+                    className={classNames("__wab_instance", sty.button__wry5U)}
+                    onClick={async () => {
+                      const $steps = {};
+
+                      $steps["goback"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                (() => {
+                                  try {
+                                    return $ctx.query.questionaireId;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })(),
+                                (() => {
+                                  try {
+                                    return $ctx.query.env;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions[
+                              "GlobalContext.goback"
+                            ]?.apply(null, [...actionArgs.args]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goback"] != null &&
+                        typeof $steps["goback"] === "object" &&
+                        typeof $steps["goback"].then === "function"
+                      ) {
+                        $steps["goback"] = await $steps["goback"];
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__h9YDd
+                      )}
+                    >
+                      {"\u786e\u5b9a"}
+                    </div>
+                  </AntdButton>
+                </Stack__>
+              }
+              className={classNames("__wab_instance", sty.dialog)}
+              noTrigger={true}
+              onOpenChange={generateStateOnChangeProp($state, [
+                "dialog",
+                "open"
+              ])}
+              open={generateStateValueProp($state, ["dialog", "open"])}
+              title={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__db9ZC
+                  )}
+                >
+                  {"\u63d0\u793a"}
+                </div>
+              }
+            />
           </div>
         </div>
       </div>
@@ -2574,8 +3398,8 @@ const PlasmicDescendants = {
     "askAdLofRubbingTheOppositeArmpit",
     "askAdLofFasteningTheBelt",
     "tooltip",
-    "button",
-    "svg"
+    "svg",
+    "dialog"
   ],
   askPain: ["askPain"],
   shoulderFlexionArom: ["shoulderFlexionArom"],
@@ -2596,9 +3420,9 @@ const PlasmicDescendants = {
   askAdLofUsingToiletPaper: ["askAdLofUsingToiletPaper"],
   askAdLofRubbingTheOppositeArmpit: ["askAdLofRubbingTheOppositeArmpit"],
   askAdLofFasteningTheBelt: ["askAdLofFasteningTheBelt"],
-  tooltip: ["tooltip", "button", "svg"],
-  button: ["button", "svg"],
-  svg: ["svg"]
+  tooltip: ["tooltip", "svg"],
+  svg: ["svg"],
+  dialog: ["dialog"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2625,8 +3449,8 @@ type NodeDefaultElementType = {
   askAdLofRubbingTheOppositeArmpit: typeof AntdRadioGroup;
   askAdLofFasteningTheBelt: typeof AntdRadioGroup;
   tooltip: typeof AntdTooltip;
-  button: typeof Button;
   svg: "svg";
+  dialog: typeof Dialog;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2715,8 +3539,8 @@ export const PlasmicMobileShoulderFollowup = Object.assign(
     ),
     askAdLofFasteningTheBelt: makeNodeComponent("askAdLofFasteningTheBelt"),
     tooltip: makeNodeComponent("tooltip"),
-    button: makeNodeComponent("button"),
     svg: makeNodeComponent("svg"),
+    dialog: makeNodeComponent("dialog"),
 
     // Metadata about props expected for PlasmicMobileShoulderFollowup
     internalVariantProps: PlasmicMobileShoulderFollowup__VariantProps,
