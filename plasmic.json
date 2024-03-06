@@ -854,6 +854,12 @@
           "name": "Fetcher",
           "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        },
+        {
+          "id": "xYMub8mootkP",
+          "name": "GlobalContext",
+          "displayName": "GlobalContext",
+          "componentImportPath": "@/src/components/GlobalContext"
         }
       ],
       "customFunctions": []
