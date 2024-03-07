@@ -106,7 +106,7 @@ export type PlasmicMobileShoulderFollowup__OverridesType = {
   shoulderMedialRotationProm?: Flex__<typeof UploadWrapper>;
   shoulderExtensionArom?: Flex__<typeof UploadWrapper>;
   shoulderExtensionProm?: Flex__<typeof UploadWrapper>;
-  askMuscleStrength?: Flex__<typeof Select>;
+  askMuscleStrength?: Flex__<typeof AntdRadioGroup>;
   askAdLofGettingDressed?: Flex__<typeof AntdRadioGroup>;
   askAdLofCombing?: Flex__<typeof AntdRadioGroup>;
   askAdLofTurnDownTheCollar?: Flex__<typeof AntdRadioGroup>;
@@ -156,12 +156,6 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
-      {
-        path: "askMuscleStrength.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
       {
         path: "askPain.value",
         type: "private",
@@ -325,6 +319,12 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "askMuscleStrength.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -415,9 +415,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
               data-plasmic-name={"askPain"}
               data-plasmic-override={overrides.askPain}
               className={classNames("__wab_instance", sty.askPain)}
-              name={
-                "\u6700\u8fd1\u4e00\u5468\u75bc\u75db\u5bf9\u6d3b\u52a8\u7684\u5f71\u54cd"
-              }
+              name={"select1"}
               onChange={(...eventArgs) => {
                 generateStateOnChangeProp($state, ["askPain", "value"])(
                   eventArgs[0]
@@ -556,7 +554,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                   <UploadWrapper
                     data-plasmic-name={"shoulderFlexionArom"}
                     data-plasmic-override={overrides.shoulderFlexionArom}
-                    accept={""}
+                    accept={"image/*"}
                     className={classNames(
                       "__wab_instance",
                       sty.shoulderFlexionArom
@@ -636,7 +634,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                   <UploadWrapper
                     data-plasmic-name={"shoulderFlexionProm"}
                     data-plasmic-override={overrides.shoulderFlexionProm}
-                    accept={""}
+                    accept={"image/*"}
                     className={classNames(
                       "__wab_instance",
                       sty.shoulderFlexionProm
@@ -745,7 +743,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                   <UploadWrapper
                     data-plasmic-name={"shoulderAbductionArom"}
                     data-plasmic-override={overrides.shoulderAbductionArom}
-                    accept={""}
+                    accept={"image/*"}
                     className={classNames(
                       "__wab_instance",
                       sty.shoulderAbductionArom
@@ -825,7 +823,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                   <UploadWrapper
                     data-plasmic-name={"shoulderAbductionProm"}
                     data-plasmic-override={overrides.shoulderAbductionProm}
-                    accept={""}
+                    accept={"image/*"}
                     className={classNames(
                       "__wab_instance",
                       sty.shoulderAbductionProm
@@ -936,7 +934,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                     data-plasmic-override={
                       overrides.shoulderLateralRotationArom
                     }
-                    accept={""}
+                    accept={"image/*"}
                     className={classNames(
                       "__wab_instance",
                       sty.shoulderLateralRotationArom
@@ -1018,7 +1016,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                     data-plasmic-override={
                       overrides.shoulderLateralRotationProm
                     }
-                    accept={""}
+                    accept={"image/*"}
                     className={classNames(
                       "__wab_instance",
                       sty.shoulderLateralRotationProm
@@ -1127,7 +1125,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                   <UploadWrapper
                     data-plasmic-name={"shoulderMedialRotationArom"}
                     data-plasmic-override={overrides.shoulderMedialRotationArom}
-                    accept={""}
+                    accept={"image/*"}
                     className={classNames(
                       "__wab_instance",
                       sty.shoulderMedialRotationArom
@@ -1207,7 +1205,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                   <UploadWrapper
                     data-plasmic-name={"shoulderMedialRotationProm"}
                     data-plasmic-override={overrides.shoulderMedialRotationProm}
-                    accept={""}
+                    accept={"image/*"}
                     className={classNames(
                       "__wab_instance",
                       sty.shoulderMedialRotationProm
@@ -1316,7 +1314,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                   <UploadWrapper
                     data-plasmic-name={"shoulderExtensionArom"}
                     data-plasmic-override={overrides.shoulderExtensionArom}
-                    accept={""}
+                    accept={"image/*"}
                     className={classNames(
                       "__wab_instance",
                       sty.shoulderExtensionArom
@@ -1396,7 +1394,7 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                   <UploadWrapper
                     data-plasmic-name={"shoulderExtensionProm"}
                     data-plasmic-override={overrides.shoulderExtensionProm}
-                    accept={""}
+                    accept={"image/*"}
                     className={classNames(
                       "__wab_instance",
                       sty.shoulderExtensionProm
@@ -1444,67 +1442,110 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                 "7.\u6700\u8fd1\u4e00\u5468\u60a8\u7684\u808c\u8089\u529b\u91cf\u63d0\u5347\u72b6\u51b5\u5982\u4f55\uff1f"
               }
             </div>
-            <Select
+            <AntdRadioGroup
               data-plasmic-name={"askMuscleStrength"}
               data-plasmic-override={overrides.askMuscleStrength}
               className={classNames("__wab_instance", sty.askMuscleStrength)}
-              name={
-                "\u6700\u8fd1\u4e00\u5468\u75bc\u75db\u5bf9\u6d3b\u52a8\u7684\u5f71\u54cd"
-              }
-              onChange={(...eventArgs) => {
-                generateStateOnChangeProp($state, [
-                  "askMuscleStrength",
-                  "value"
-                ])(eventArgs[0]);
-              }}
-              options={(() => {
-                const __composite = [
-                  { value: null, label: null },
-                  { value: null, label: null },
-                  { label: null, value: null },
-                  { value: null, label: null },
-                  { value: null, label: null },
-                  { value: null, label: null }
-                ];
-                __composite["0"]["value"] = "5";
-                __composite["0"]["label"] =
-                  "5\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u963b\u529b\uff0c\u5e76\u80fd\u7ef4\u6301\u5bf9\u6297\u59ff\u52bf";
-                __composite["1"]["value"] = "4";
-                __composite["1"]["label"] =
-                  "4\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u963b\u529b\uff0c\u4f46\u4e0d\u80fd\u7ef4\u6301\u59ff\u52bf";
-                __composite["2"]["label"] =
-                  "3\u7ea7\uff1a\u53ef\u4ee5\u5bf9\u6297\u91cd\u529b\uff0c\u81ea\u4e3b\u5c06\u80a9\u5173\u8282\u5411\u5916\u6253\u5f00";
-                __composite["2"]["value"] = "3";
-                __composite["3"]["value"] = "2";
-                __composite["3"]["label"] =
-                  "2\u7ea7\uff1a\u53ef\u4ee5\u5728\u5e73\u8eba\u4f4d\u7f6e\u4e0b\u5411\u5916\u4f38\u5c55\u80a9\u5173\u8282";
-                __composite["4"]["value"] = "1";
-                __composite["4"]["label"] =
-                  "1\u7ea7\uff1a\u65e0\u6cd5\u5728\u5e73\u8eba\u60c5\u51b5\u5411\u5916\u6253\u5f00\u80a9\u5173\u8282\uff0c\u4f46\u662f\u80fd\u6478\u5230\u808c\u8089\u5728\u6536\u7d27";
-                __composite["5"]["value"] = "0";
-                __composite["5"]["label"] =
-                  "0\u7ea7\uff1a\u65e0\u6cd5\u5728\u5e73\u8eba\u60c5\u51b5\u5411\u5916\u6253\u5f00\u80a9\u5173\u8282\uff0c\u4e5f\u4e0d\u80fd\u6478\u5230\u808c\u8089\u5728\u6536\u7d27";
-                return __composite;
-              })()}
-              placeholder={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__uLt60
-                  )}
-                >
-                  {
-                    "\u8bf7\u6839\u636e\u60a8\u7684\u808c\u529b\u60c5\u51b5\u505a\u9009\u62e9"
-                  }
-                </div>
-              }
+              disabled={false}
+              onChange={generateStateOnChangeProp($state, [
+                "askMuscleStrength",
+                "value"
+              ])}
+              options={[
+                { value: "option1", label: "Option 1" },
+                { value: "option2", label: "Option 2" }
+              ]}
+              useChildren={true}
               value={generateStateValueProp($state, [
                 "askMuscleStrength",
                 "value"
               ])}
-            />
-
+            >
+              <AntdRadio
+                className={classNames("__wab_instance", sty.radio__vUd3B)}
+                value={"5"}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bL2B4
+                  )}
+                >
+                  {"5\u7ea7"}
+                </div>
+              </AntdRadio>
+              <AntdRadio
+                className={classNames("__wab_instance", sty.radio__sDze2)}
+                value={"4"}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qk6Mq
+                  )}
+                >
+                  {"4\u7ea7"}
+                </div>
+              </AntdRadio>
+              <AntdRadio
+                className={classNames("__wab_instance", sty.radio__gJk2Z)}
+                value={"3"}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__va1IT
+                  )}
+                >
+                  {"3\u7ea7"}
+                </div>
+              </AntdRadio>
+              <AntdRadio
+                className={classNames("__wab_instance", sty.radio__oIkhj)}
+                value={"2"}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___6Icxn
+                  )}
+                >
+                  {"2\u7ea7"}
+                </div>
+              </AntdRadio>
+              <AntdRadio
+                className={classNames("__wab_instance", sty.radio__n05ZJ)}
+                value={"1"}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___3Ul7P
+                  )}
+                >
+                  {"1\u7ea7"}
+                </div>
+              </AntdRadio>
+              <AntdRadio
+                className={classNames("__wab_instance", sty.radio__pBqqc)}
+                value={"0"}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__sx2A
+                  )}
+                >
+                  {"0\u7ea7"}
+                </div>
+              </AntdRadio>
+            </AntdRadioGroup>
             <div className={classNames(projectcss.all, sty.columns__zUtBo)}>
               <div className={classNames(projectcss.all, sty.column__uolJ)}>
                 <div
@@ -1514,7 +1555,9 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                     sty.text__aL0Bt
                   )}
                 >
-                  {"5\u7ea7"}
+                  {
+                    "5\u7ea7\uff1a\u80fd\u5bf9\u6297\u963b\u529b\uff0c\u5e76\u80fd\u4fdd\u6301\u59ff\u52bf"
+                  }
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.column__jhLtF)}>
@@ -1546,7 +1589,9 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                     sty.text__fzjKx
                   )}
                 >
-                  {"4\u7ea7"}
+                  {
+                    "4\u7ea7\uff1a\u80fd\u5bf9\u6297\u963b\u529b\uff0c\u4f46\u4e0d\u80fd\u4fdd\u6301\u59ff\u52bf"
+                  }
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.column__qMvDn)}>
@@ -1578,7 +1623,9 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                     sty.text__gOav
                   )}
                 >
-                  {"3\u7ea7"}
+                  {
+                    "3\u7ea7\uff1a\u80fd\u81ea\u4e3b\u5411\u5916\u62ac\u8d77\u80a9\u5173\u8282"
+                  }
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.column__is3Yx)}>
@@ -1610,7 +1657,9 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                     sty.text__gvE5A
                   )}
                 >
-                  {"2\u7ea7"}
+                  {
+                    "2\u7ea7\uff1a\u5728\u5e73\u8eba\u60c5\u51b5\u4e0b\uff0c\u80fd\u5411\u5916\u62ac\u8d77\u80a9\u5173\u8282"
+                  }
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.column__qddL)}>
@@ -1642,7 +1691,9 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                     sty.text__r9SMf
                   )}
                 >
-                  {"1\u7ea7"}
+                  {
+                    "1\u7ea7\uff1a\u4e0d\u80fd\u62ac\u8d77\u80a9\u5173\u8282\uff0c\u4f46\u80fd\u6478\u5230\u808c\u8089\u6536\u7f29"
+                  }
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.column___4Dch)}>
@@ -1674,7 +1725,9 @@ function PlasmicMobileShoulderFollowup__RenderFunc(props: {
                     sty.text___7APOs
                   )}
                 >
-                  {"0\u7ea7"}
+                  {
+                    "0\u7ea7\uff1a\u4e0d\u80fd\u62ac\u8d77\uff0c\u4e5f\u4e0d\u80fd\u6478\u5230\u808c\u8089\u6536\u7f29"
+                  }
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.column__yx2Sp)}>
@@ -3440,7 +3493,7 @@ type NodeDefaultElementType = {
   shoulderMedialRotationProm: typeof UploadWrapper;
   shoulderExtensionArom: typeof UploadWrapper;
   shoulderExtensionProm: typeof UploadWrapper;
-  askMuscleStrength: typeof Select;
+  askMuscleStrength: typeof AntdRadioGroup;
   askAdLofGettingDressed: typeof AntdRadioGroup;
   askAdLofCombing: typeof AntdRadioGroup;
   askAdLofTurnDownTheCollar: typeof AntdRadioGroup;

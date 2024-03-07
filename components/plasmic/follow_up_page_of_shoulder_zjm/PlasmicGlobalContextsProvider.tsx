@@ -7,14 +7,13 @@
 import * as React from "react";
 import { hasVariant, ensureGlobalVariants } from "@plasmicapp/react-web";
 import { AntdConfigProvider } from "@plasmicpkgs/antd5/skinny/registerConfigProvider";
-import { GlobalContext } from "@/src/components/GlobalContext"; // plasmic-import: xYMub8mootkP/codeComponent
+import { GlobalContext } from "@/src/components/GlobalContext"; // plasmic-import: JqaJz9Co76Iu/codeComponent
 
 export interface GlobalContextsProviderProps {
   children?: React.ReactElement;
   antdConfigProviderProps?: Partial<
     Omit<React.ComponentProps<typeof AntdConfigProvider>, "children">
   >;
-
   globalContextProps?: Partial<
     Omit<React.ComponentProps<typeof GlobalContext>, "children">
   >;

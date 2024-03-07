@@ -5,6 +5,7 @@
   height: 100%;
   align-content: flex-start;
   justify-items: center;
+  background: var(--antd-colorBgContainer);
   min-width: 0;
   min-height: 0;
   grid-template-columns:
@@ -30,10 +31,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 733px;
-  height: 6283px;
+  width: 740px;
+  height: 5064px;
   max-width: 100%;
-  padding: 8px 8px 22px;
+  overflow: auto;
+  padding: 8px 0px 22px 8px;
 }
 .text__d8A4K {
   position: relative;
@@ -42,7 +44,7 @@
   max-width: 100%;
   color: #000000;
   text-align: center;
-  font-size: 35px;
+  font-size: 30px;
   min-width: 0;
 }
 .text___0BaLg {
@@ -52,7 +54,7 @@
   max-width: 100%;
   color: #82d5ae;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
   min-width: 0;
 }
 .text___9Mo1 {
@@ -62,7 +64,7 @@
   max-width: 100%;
   color: #000000;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
   min-width: 0;
 }
 .askPain:global(.__wab_instance) {
@@ -76,7 +78,7 @@
   -webkit-transition-duration: 1s;
 }
 .text__hv8KB {
-  font-size: 30px;
+  font-size: 18px;
 }
 .freeBox__eedQx {
   display: flex;
@@ -113,7 +115,7 @@
   max-width: 100%;
   color: #000000;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
   min-width: 0;
 }
 .text___2UZgC {
@@ -121,7 +123,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #000000;
   min-width: 0;
@@ -176,7 +178,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #000000;
   min-width: 0;
@@ -236,7 +238,7 @@
   max-width: 100%;
   color: #000000;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
   min-width: 0;
 }
 .text__f19Rn {
@@ -244,7 +246,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #000000;
   min-width: 0;
@@ -301,7 +303,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #000000;
   min-width: 0;
@@ -360,7 +362,7 @@
   max-width: 100%;
   color: #000000;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
   min-width: 0;
 }
 .text___2QwDq {
@@ -368,7 +370,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #000000;
   min-width: 0;
@@ -425,7 +427,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #000000;
   min-width: 0;
@@ -484,7 +486,7 @@
   max-width: 100%;
   color: #000000;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
   min-width: 0;
 }
 .text__wSk5F {
@@ -492,7 +494,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #000000;
   min-width: 0;
@@ -550,7 +552,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #000000;
   min-width: 0;
@@ -609,7 +611,7 @@
   max-width: 100%;
   color: #000000;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
   padding-top: 0px;
   min-width: 0;
 }
@@ -618,7 +620,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #000000;
   min-width: 0;
@@ -674,7 +676,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #000000;
   min-width: 0;
@@ -732,23 +734,104 @@
   max-width: 100%;
   color: #000000;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
   padding-top: 0px;
   margin-top: 8px;
   min-width: 0;
 }
 .askMuscleStrength:global(.__wab_instance) {
-  max-width: 100%;
+  display: flex;
+  flex-direction: row;
   position: relative;
-  width: 546px;
-  flex-grow: 0;
-  transition-property: all;
-  transition-duration: 1s;
-  -webkit-transition-property: all;
-  -webkit-transition-duration: 1s;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  font-size: 18px;
+  text-align: center;
+  min-width: 0;
+  padding: 8px;
 }
-.text__uLt60 {
-  font-size: 30px;
+.radio__vUd3B:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  font-size: 14px;
+  text-align: center;
+}
+.text__bL2B4 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.radio__sDze2:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  font-size: 14px;
+  text-align: center;
+}
+.text__qk6Mq {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.radio__gJk2Z:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  font-size: 14px;
+  text-align: center;
+}
+.text__va1IT {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.radio__oIkhj:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  font-size: 14px;
+  text-align: center;
+}
+.text___6Icxn {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-right: 0px;
+  min-width: 0;
+}
+.radio__n05ZJ:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  font-size: 14px;
+  text-align: center;
+}
+.text___3Ul7P {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.radio__pBqqc:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  font-size: 14px;
+  text-align: center;
+}
+.text__sx2A {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
 }
 .columns__zUtBo {
   --plsmc-rc-col-gap: 0px;
@@ -803,7 +886,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 18px;
   min-width: 0;
 }
 .column__jhLtF {
@@ -892,7 +975,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 18px;
   padding-left: 0px;
   min-width: 0;
 }
@@ -982,7 +1065,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 18px;
   min-width: 0;
 }
 .column__is3Yx {
@@ -1071,7 +1154,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 18px;
   min-width: 0;
 }
 .column__qddL {
@@ -1160,7 +1243,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 18px;
   min-width: 0;
 }
 .column___4Dch {
@@ -1249,7 +1332,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 30px;
+  font-size: 18px;
   min-width: 0;
 }
 .column__yx2Sp {
@@ -1292,7 +1375,7 @@
   max-width: 100%;
   color: #000000;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
   padding-top: 0px;
   min-width: 0;
 }
@@ -1313,7 +1396,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 28px;
+  font-size: 18px;
   min-width: 0;
 }
 .askAdLofGettingDressed:global(.__wab_instance) {
@@ -1322,56 +1405,58 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  width: 701px;
+  width: 100%;
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  font-size: 14px;
+  min-width: 0;
   padding: 8px;
 }
 .radio___6SYbu:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__tEpbp {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__tEpbp {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .radio___5NwUj:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__e36C {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 .radio__bHywi:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__li5Uz {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
@@ -1392,7 +1477,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 28px;
+  font-size: 18px;
   min-width: 0;
 }
 .askAdLofCombing:global(.__wab_instance) {
@@ -1405,52 +1490,53 @@
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  font-size: 14px;
   padding: 8px;
 }
 .radio__jEmm5:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text___9MRrD {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text___9MRrD {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .radio__gshWp:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__dnPd1 {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 .radio__awvBu:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__qv3Cs {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
@@ -1471,7 +1557,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 28px;
+  font-size: 18px;
   min-width: 0;
 }
 .askAdLofTurnDownTheCollar:global(.__wab_instance) {
@@ -1484,52 +1570,53 @@
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  font-size: 14px;
   padding: 8px;
 }
 .radio__yZnBm:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__dxfJh {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__dxfJh {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .radio___3Uq2A:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__dp6Y4 {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 .radio___3O5Ff:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 20px;
+  font-size: 14px;
 }
 .text__bwfB3 {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
@@ -1550,7 +1637,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 28px;
+  font-size: 18px;
   min-width: 0;
 }
 .askAdLofWearingAnApron:global(.__wab_instance) {
@@ -1563,52 +1650,53 @@
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  font-size: 14px;
   padding: 8px;
 }
 .radio__ci9IR:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__b5Hlo {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__b5Hlo {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .radio__rRteN:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__qHyAn {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 .radio__alu2U:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__q1WPl {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
@@ -1629,7 +1717,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 28px;
+  font-size: 18px;
   min-width: 0;
 }
 .askAdLofUsingToiletPaper:global(.__wab_instance) {
@@ -1642,52 +1730,53 @@
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  font-size: 18px;
   padding: 8px;
 }
 .radio__ex09L:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__u3KoR {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__u3KoR {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .radio__mG13G:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__hTh8R {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 .radio__pm4T5:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__mAqby {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
@@ -1708,7 +1797,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 28px;
+  font-size: 18px;
   min-width: 0;
 }
 .askAdLofRubbingTheOppositeArmpit:global(.__wab_instance) {
@@ -1721,52 +1810,53 @@
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  font-size: 14px;
   padding: 8px;
 }
 .radio__uuByX:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__llZt9 {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__llZt9 {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .radio__fapUz:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text___1TxPc {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 .radio__pa7Ri:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text___5Eb97 {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
 }
 .freeBox___0Bvqd {
@@ -1786,7 +1876,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 28px;
+  font-size: 18px;
   min-width: 0;
 }
 .askAdLofFasteningTheBelt:global(.__wab_instance) {
@@ -1799,52 +1889,53 @@
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  font-size: 14px;
   padding: 8px;
 }
 .radio___0A3S1:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__cOlTh {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__cOlTh {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .radio__pYrE:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text___3Tbmo {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
 .radio___3BOr:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  font-size: 18px;
+  font-size: 14px;
 }
 .text__yq2Fr {
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   min-width: 0;
   min-height: 0;
 }
@@ -1874,7 +1965,7 @@
   height: 1em;
 }
 .text__zqpbp {
-  font-size: 30px;
+  font-size: 20px;
 }
 .svg__kLjhW {
   position: relative;
